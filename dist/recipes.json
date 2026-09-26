@@ -3381,7 +3381,10 @@
         }
       ],
       "sourceUrl": "https://www.wowhead.com/forever/spell=9957",
-      "caveat": "The Orcish War Leggings plans are Horde-only. Alliance crafters should verify access before relying on this estimate."
+      "allowedFactions": [
+        "horde"
+      ],
+      "caveat": "The Orcish War Leggings plans are Horde-only."
     },
     "7941": {
       "itemId": 7941,

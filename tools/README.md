@@ -1,6 +1,6 @@
 # Owner price sync (Windows)
 
-`owner-scan-sync.mjs` watches the dedicated `ForeverWaylaidScan.lua` saved file and publishes completed Horde city scans to the public Waylaid Ledger. It never reads `Auctionator.lua`, whose historical prices cannot identify whether a scan came from a Horde or neutral auction house.
+`owner-scan-sync.mjs` watches the dedicated `ForeverWaylaidScan.lua` saved file and publishes completed Horde and Alliance city scans to their separate markets in the public Waylaid Ledger. It never reads `Auctionator.lua`, whose historical prices cannot identify whether a scan came from a faction or neutral auction house.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ The account folder may differ on another installation. The helper also accepts `
 
 ## Start and verify
 
-From the repository root, run `node tools/owner-scan-sync.mjs --once` to check a saved scan. Run it without `--once` for continuous 15-second polling. A scan in Orgrimmar, Thunder Bluff, Undercity, or Silvermoon City is captured when Auctionator reports completion; World of Warcraft writes the saved file after `/reload` or logout. The watcher then posts only item IDs, unit prices in copper, quantities, scan time, and market verification fields. Unknown locations and Goblin neutral auction houses are rejected.
+From the repository root, run `node tools/owner-scan-sync.mjs --once` to check a saved scan. Run it without `--once` for continuous 15-second polling. Auctionator scans in Orgrimmar, Thunder Bluff, Undercity, Silvermoon City, Stormwind City, Ironforge, Darnassus, or the Exodar are captured when complete. World of Warcraft writes the saved file after `/reload` or logout. The addon keeps one latest scan per faction, and the watcher checks and publishes each faction market independently. It posts only item IDs, unit prices in copper, quantities, scan time, and market verification fields. Unknown locations and Goblin neutral auction houses are rejected.
 
 To launch at sign-in, create a Windows Task Scheduler task under the same Windows account with a **logon** trigger. Set the program to your Node executable and the argument to the absolute path of `owner-scan-sync.mjs`; use the repository root as the working directory. Keep the task in that signed-in user session if the WoW or repo paths are on mapped drives. The watcher is a background helper and does not need a browser tab open.
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Publish completed Horde capital scans captured by ForeverWaylaidScan.
+ * Publish completed Horde and Alliance capital scans captured by ForeverWaylaidScan.
  * This deliberately never reads Auctionator.lua: Auctionator's saved price
- * database does not preserve Horde-versus-neutral auction house provenance.
+ * database does not preserve faction-versus-neutral auction house provenance.
  *
  * The token and local WoW path live in %LOCALAPPDATA%\ForeverWaylaidLedger\sync-config.json,
  * outside this public source repository. Node 18+ is required.
@@ -19,16 +19,25 @@ const CATALOG_PATH = path.resolve(HERE, '../dist/catalog.json');
 const RECIPES_PATH = path.resolve(HERE, '../dist/recipes.json');
 const DEFAULT_CONFIG = path.join(process.env.LOCALAPPDATA || path.join(homedir(), 'AppData', 'Local'), 'ForeverWaylaidLedger', 'sync-config.json');
 const SITE_ORIGIN = 'https://forever-waylaid-ledger.warlune.chatgpt.site';
-const MARKET = 'forever.pvp.horde.us';
+const MARKETS = Object.freeze({ Horde: 'forever.pvp.horde.us', Alliance: 'forever.pvp.alliance.us' });
 const MAX_LUA_BYTES = 2 * 1024 * 1024;
 const MAX_ITEMS = 5000;
 const POLL_MS = 15000;
 const CITY_MAP_IDS = Object.freeze({
-  Orgrimmar: 1454,
-  'Thunder Bluff': 1456,
-  Undercity: 1458,
-  'Silvermoon City': 1954,
+  Horde: Object.freeze({
+    Orgrimmar: 1454,
+    'Thunder Bluff': 1456,
+    Undercity: 1458,
+    'Silvermoon City': 1954,
+  }),
+  Alliance: Object.freeze({
+    'Stormwind City': 1453,
+    Ironforge: 1455,
+    Darnassus: 1457,
+    'The Exodar': 1947,
+  }),
 });
+const SAVED_VARIABLE_FACTIONS = Object.freeze({ FWL_HORDE_SCAN: 'Horde', FWL_ALLIANCE_SCAN: 'Alliance' });
 
 /** Read only the restricted Lua data form that WoW SavedVariables writes. */
 export function parseSavedVariables(input) {
@@ -134,13 +143,22 @@ export function parseSavedVariables(input) {
     return out;
   }
 
+  const snapshots = Object.create(null);
+  const seen = new Set();
   space();
-  if (identifier() !== 'FWL_HORDE_SCAN') throw new Error('This is not the ForeverWaylaidScan saved file.');
-  expect('=');
-  const snapshot = value(0);
-  space();
-  if (index !== source.length) throw new Error('Unexpected data after the scan snapshot.');
-  return snapshot;
+  while (index < source.length) {
+    const variable = identifier();
+    if (!Object.hasOwn(SAVED_VARIABLE_FACTIONS, variable)) throw new Error('This is not the ForeverWaylaidScan saved file.');
+    const faction = SAVED_VARIABLE_FACTIONS[variable];
+    if (seen.has(faction)) throw new Error('Duplicate faction scan snapshot.');
+    seen.add(faction);
+    expect('=');
+    const snapshot = value(0);
+    if (snapshot !== null) snapshots[faction] = snapshot;
+    space();
+  }
+  if (!Object.keys(snapshots).length) throw new Error('The SavedVariables file has no faction scan snapshots.');
+  return snapshots;
 }
 
 export function catalogItemIds(catalog, recipeData) {
@@ -170,11 +188,14 @@ export function catalogItemIds(catalog, recipeData) {
 /** Explicitly reject unknown locations and neutral auction data before upload. */
 export function buildPayload(snapshot, allowedIds, now = Math.floor(Date.now() / 1000)) {
   if (!snapshot || typeof snapshot !== 'object' || Array.isArray(snapshot)) throw new Error('Scan snapshot is missing.');
-  if (snapshot.version !== 1 || snapshot.market !== MARKET || snapshot.auctionHouse !== 'horde' || snapshot.faction !== 'Horde') {
-    throw new Error('Scan market is not the Forever Horde auction house.');
+  const faction = snapshot.faction;
+  if (!Object.hasOwn(MARKETS, faction) || snapshot.version !== 1
+      || snapshot.market !== MARKETS[faction] || snapshot.auctionHouse !== faction.toLowerCase()) {
+    throw new Error('Scan market does not match a Forever faction auction house.');
   }
-  if (!Object.hasOwn(CITY_MAP_IDS, snapshot.zone) || CITY_MAP_IDS[snapshot.zone] !== snapshot.zoneMapID) {
-    throw new Error('Scan location is not a verified Horde capital. Neutral auction scans are excluded.');
+  const cities = CITY_MAP_IDS[faction];
+  if (!Object.hasOwn(cities, snapshot.zone) || cities[snapshot.zone] !== snapshot.zoneMapID) {
+    throw new Error('Scan location is not a verified faction capital. Neutral auction scans are excluded.');
   }
   if (!['full', 'incremental'].includes(snapshot.scanType)) throw new Error('Scan type is not recognized.');
   if (!Number.isSafeInteger(snapshot.scannedAt) || snapshot.scannedAt < now - 7 * 86400 || snapshot.scannedAt > now + 300) {
@@ -203,10 +224,10 @@ export function buildPayload(snapshot, allowedIds, now = Math.floor(Date.now() /
   prices.sort((a, b) => a.itemId - b.itemId);
   return {
     schemaVersion: 1,
-    market: MARKET,
+    market: MARKETS[faction],
     realm: snapshot.realm.trim(),
-    faction: 'Horde',
-    auctionHouse: 'horde',
+    faction,
+    auctionHouse: faction.toLowerCase(),
     zone: snapshot.zone,
     zoneMapID: snapshot.zoneMapID,
     scanType: snapshot.scanType,
@@ -249,8 +270,8 @@ async function readStableSnapshot(scanFile) {
   return parseSavedVariables(contents);
 }
 
-async function fetchRemoteTimestamp() {
-  const url = `${SITE_ORIGIN}/api/owner-scan?market=${encodeURIComponent(MARKET)}`;
+async function fetchRemoteTimestamp(market) {
+  const url = `${SITE_ORIGIN}/api/owner-scan?market=${encodeURIComponent(market)}`;
   const response = await fetch(url, { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(10000) });
   if (response.status === 404) return 0;
   if (!response.ok) throw new Error(`Site price check failed (HTTP ${response.status}).`);
@@ -273,15 +294,30 @@ async function publish(payload, token) {
   return 'published';
 }
 
-export async function syncOnce({ scanFile, token }, allowedIds, previousDigest = '') {
-  const snapshot = await readStableSnapshot(scanFile);
-  const payload = buildPayload(snapshot, allowedIds);
-  const digest = createHash('sha256').update(JSON.stringify(payload)).digest('hex');
-  if (digest === previousDigest) return { digest, status: 'unchanged', payload };
-  const remoteTimestamp = await fetchRemoteTimestamp();
-  if (remoteTimestamp >= payload.completedAt) return { digest, status: 'already current', payload };
-  const status = await publish(payload, token);
-  return { digest, status, payload };
+export async function syncOnce({ scanFile, token }, allowedIds, previousDigests = {}) {
+  const snapshots = await readStableSnapshot(scanFile);
+  const digests = { ...previousDigests };
+  const results = [];
+  const errors = [];
+  for (const faction of Object.keys(MARKETS)) {
+    if (!Object.hasOwn(snapshots, faction)) continue;
+    try {
+      const payload = buildPayload(snapshots[faction], allowedIds);
+      if (payload.faction !== faction) throw new Error(`${faction} saved variable contains a ${payload.faction} scan.`);
+      const digest = createHash('sha256').update(JSON.stringify(payload)).digest('hex');
+      if (digest === previousDigests[faction]) {
+        results.push({ digest, status: 'unchanged', payload });
+        continue;
+      }
+      const remoteTimestamp = await fetchRemoteTimestamp(payload.market);
+      const status = remoteTimestamp >= payload.completedAt ? 'already current' : await publish(payload, token);
+      digests[faction] = digest;
+      results.push({ digest, status, payload });
+    } catch (error) {
+      errors.push({ faction, error });
+    }
+  }
+  return { digests, results, errors };
 }
 
 async function main() {
@@ -293,21 +329,24 @@ async function main() {
   const config = await loadConfig(args);
   const [catalog, recipes] = await Promise.all([CATALOG_PATH, RECIPES_PATH].map(async file => JSON.parse(await readFile(file, 'utf8'))));
   const allowedIds = catalogItemIds(catalog, recipes);
-  let lastDigest = '';
+  let lastDigests = {};
   let lastError = '';
   let running = false;
   async function tick() {
     if (running) return;
     running = true;
     try {
-      const result = await syncOnce(config, allowedIds, lastDigest);
-      lastDigest = result.digest;
-      lastError = '';
-      if (result.status !== 'unchanged') {
-        process.stdout.write(`[${new Date().toISOString()}] ${result.status}: ${result.payload.prices.length} catalog prices from ${result.payload.realm}, scan ${new Date(result.payload.completedAt * 1000).toISOString()}\n`);
+      const batch = await syncOnce(config, allowedIds, lastDigests);
+      lastDigests = batch.digests;
+      for (const result of batch.results) {
+        if (result.status !== 'unchanged') {
+          process.stdout.write(`[${new Date().toISOString()}] ${result.status}: ${result.payload.prices.length} ${result.payload.faction} catalog prices from ${result.payload.realm}, scan ${new Date(result.payload.completedAt * 1000).toISOString()}\n`);
+        }
       }
+      if (batch.errors.length) throw new Error(batch.errors.map(({ faction, error }) => `${faction}: ${error.message}`).join('; '));
+      lastError = '';
     } catch (error) {
-      const message = error?.code === 'ENOENT' ? 'Waiting for ForeverWaylaidScan.lua; scan at a Horde capital, then /reload or log out.' : error.message;
+      const message = error?.code === 'ENOENT' ? 'Waiting for ForeverWaylaidScan.lua; scan at a faction capital, then /reload or log out.' : error.message;
       if (message !== lastError) process.stderr.write(`[${new Date().toISOString()}] ${message}\n`);
       lastError = message;
       if (args.includes('--once')) process.exitCode = 1;

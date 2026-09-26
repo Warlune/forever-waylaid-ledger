@@ -35,6 +35,15 @@ const scan = {
   completedAt,
   prices: [{ itemId: 2447, price: 123, quantity: 42 }]
 };
+const allianceScan = {
+  ...scan,
+  market: 'forever.pvp.alliance.us',
+  faction: 'Alliance',
+  auctionHouse: 'alliance',
+  zone: 'Stormwind City',
+  zoneMapID: 1453,
+  prices: [{ itemId: 2447, price: 321, quantity: 21 }]
+};
 const publicScan = {
   schemaVersion: scan.schemaVersion,
   market: scan.market,
@@ -63,6 +72,8 @@ assert.equal((await post({ ...scan, auctionHouse: 'neutral' })).status, 400);
 assert.equal((await post({ ...scan, zone: 'Gadgetzan', zoneMapID: 1446 })).status, 400);
 assert.equal((await post({ ...scan, zoneMapID: 1446 })).status, 400);
 assert.equal((await post({ ...scan, faction: 'Alliance' })).status, 400);
+assert.equal((await post({ ...scan, market: allianceScan.market })).status, 400);
+assert.equal((await post({ ...scan, market: allianceScan.market, faction: 'Alliance', auctionHouse: 'alliance' })).status, 400);
 assert.equal((await post({ ...scan, realm: 'Classic Beta Normal' })).status, 400);
 assert.equal((await post({ ...scan, completedAt: completedAt - 8 * 86400 })).status, 400);
 assert.equal((await post({ ...scan, prices: [scan.prices[0], scan.prices[0]] })).status, 400);
@@ -105,6 +116,30 @@ await Promise.all([
 ]);
 const newest = await worker.fetch(new Request(`${base}/api/owner-scan?market=${scan.market}`), env);
 assert.equal((await newest.json()).completedAt, completedAt + 3);
+assert.equal((await worker.fetch(new Request(`${base}/api/owner-scan?market=${allianceScan.market}`), env)).status, 404);
+assert.equal((await post({ ...allianceScan, auctionHouse: 'neutral' })).status, 400);
+assert.equal((await post({ ...allianceScan, faction: 'Horde' })).status, 400);
+assert.equal((await post({ ...allianceScan, zone: 'Booty Bay', zoneMapID: 1434 })).status, 400);
+assert.equal((await post({ ...allianceScan, zoneMapID: 1434 })).status, 400);
+assert.equal((await post({ ...allianceScan, realm: 'Classic Beta Normal' })).status, 400);
+assert.equal((await post(allianceScan)).status, 201);
+assert.deepEqual(await (await worker.fetch(new Request(`${base}/api/owner-scan?market=${allianceScan.market}`), env)).json(), {
+  ...publicScan,
+  market: allianceScan.market,
+  faction: 'Alliance',
+  auctionHouse: 'alliance',
+  prices: allianceScan.prices
+});
+assert.equal((await post({ ...allianceScan, completedAt: completedAt - 1 })).status, 409);
+assert.equal((await post({ ...allianceScan, completedAt: completedAt + 1, zone: 'Ironforge', zoneMapID: 1455 })).status, 201);
+assert.equal((await post({ ...allianceScan, completedAt: completedAt + 2, zone: 'Darnassus', zoneMapID: 1457 })).status, 201);
+assert.equal((await post({ ...allianceScan, completedAt: completedAt + 3, zone: 'The Exodar', zoneMapID: 1947 })).status, 201);
+assert.equal((await post({ ...allianceScan, completedAt: completedAt + 4, zone: 'Orgrimmar', zoneMapID: 1454 })).status, 400);
+assert.equal((await (await worker.fetch(new Request(`${base}/api/owner-scan?market=${scan.market}`), env)).json()).completedAt, completedAt + 3);
+assert.equal((await worker.fetch(new Request(`${base}/api/owner-scan?market=${allianceScan.market}`, {
+  headers: { origin: pagesOrigin }
+}), env)).headers.get('access-control-allow-origin'), pagesOrigin);
 assert.equal((await worker.fetch(new Request(`${base}/api/owner-scan?market=forever.normal.horde.us`), env)).status, 400);
+assert.equal((await worker.fetch(new Request(`${base}/api/owner-scan?market=forever.normal.alliance.us`), env)).status, 400);
 assert.equal((await worker.fetch(new Request(`${base}/api/owner-scan`, { method: 'DELETE' }), env)).status, 405);
-console.log('Worker storage, authorization, neutral exclusion, freshness, restricted CORS, and static routes passed.');
+console.log('Worker faction-isolated storage, authorization, neutral exclusion, freshness, restricted CORS, and static routes passed.');

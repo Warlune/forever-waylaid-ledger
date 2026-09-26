@@ -22,11 +22,14 @@ const vendorReagents = new Set([
 ]);
 const caveats = new Map([
   [11371, 'Smelt Dark Iron requires the Black Forge in Blackrock Depths and learning the spell from The Spectral Chalice.'],
-  [7929, 'The Orcish War Leggings plans are Horde-only. Alliance crafters should verify access before relying on this estimate.'],
+  [7929, 'The Orcish War Leggings plans are Horde-only.'],
   [18587, 'Requires Goblin Engineering specialization.'],
   [18645, 'Requires Gnomish Engineering specialization.'],
   [18232, 'The Field Repair Bot schematic is found in Blackrock Depths.'],
   [21277, 'The Tranquil Mechanical Yeti schematic is learned from a quest.']
+]);
+const allowedFactions = new Map([
+  [7929, ['horde']]
 ]);
 
 function parseCsv(text) {
@@ -131,7 +134,8 @@ function visit(itemId) {
         itemId, name: nameOf(itemId), spellId, profession: professionBySpell.get(spellId),
         skill: old?.skill ?? (spellId === 1244421 ? 260 : 0),
         outputMin, outputMax, reagents,
-        sourceUrl: `https://www.wowhead.com/forever/spell=${spellId}`
+        sourceUrl: `https://www.wowhead.com/forever/spell=${spellId}`,
+        ...(allowedFactions.has(itemId) ? { allowedFactions: allowedFactions.get(itemId) } : {})
       };
       const caveat = caveats.get(itemId);
       if (caveat) recipe.caveat = caveat;

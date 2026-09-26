@@ -1,15 +1,26 @@
 local _, Addon = ...
 
--- These are city UI map IDs in Classic clients. Neutral auction houses in
--- Booty Bay, Gadgetzan, and Everlook cannot pass this allowlist.
-local HORDE_CAPITALS = {
-  [1454] = "Orgrimmar",
-  [1456] = "Thunder Bluff",
-  [1458] = "Undercity",
-  [1954] = "Silvermoon City",
+-- These are city UI map IDs in Classic clients. Goblin neutral auction
+-- houses and shared cities such as Shattrath cannot pass either allowlist.
+local CAPITALS = {
+  Horde = {
+    [1454] = "Orgrimmar",
+    [1456] = "Thunder Bluff",
+    [1458] = "Undercity",
+    [1954] = "Silvermoon City",
+  },
+  Alliance = {
+    [1453] = "Stormwind City",
+    [1455] = "Ironforge",
+    [1457] = "Darnassus",
+    [1947] = "The Exodar",
+  },
 }
 
-local MARKET = "forever.pvp.horde.us"
+local MARKETS = {
+  Horde = "forever.pvp.horde.us",
+  Alliance = "forever.pvp.alliance.us",
+}
 local houseOpen = false
 local pending = nil
 local scanEvents = {}
@@ -20,7 +31,7 @@ local function notify(message)
   end
 end
 
-local function cityForPlayer()
+local function cityForPlayer(faction)
   if not C_Map or type(C_Map.GetBestMapForUnit) ~= "function"
       or type(C_Map.GetMapInfo) ~= "function" then
     return nil
@@ -32,8 +43,8 @@ local function cityForPlayer()
     if type(mapID) ~= "number" or visited[mapID] then
       return nil
     end
-    if HORDE_CAPITALS[mapID] then
-      return mapID, HORDE_CAPITALS[mapID]
+    if CAPITALS[faction][mapID] then
+      return mapID, CAPITALS[faction][mapID]
     end
     visited[mapID] = true
     local mapInfo = C_Map.GetMapInfo(mapID)
@@ -43,15 +54,16 @@ local function cityForPlayer()
 end
 
 local function context()
-  if not houseOpen or UnitFactionGroup("player") ~= "Horde" then
+  local faction = UnitFactionGroup("player")
+  if not houseOpen or not MARKETS[faction] then
     return nil
   end
   local realm = GetRealmName()
-  local mapID, city = cityForPlayer()
+  local mapID, city = cityForPlayer(faction)
   if type(realm) ~= "string" or realm:gsub("[^%w]", ""):lower() ~= "classicbetapvp2" or not mapID then
     return nil
   end
-  return { realm = realm, zoneMapID = mapID, zone = city }
+  return { realm = realm, faction = faction, market = MARKETS[faction], zoneMapID = mapID, zone = city }
 end
 
 local function positiveNumber(value)
@@ -119,12 +131,12 @@ local function saveCompleteScan(kind, rows, scanContext)
     return false
   end
 
-  FWL_HORDE_SCAN = {
+  local snapshot = {
     version = 1,
-    market = MARKET,
+    market = scanContext.market,
     realm = scanContext.realm,
-    faction = "Horde",
-    auctionHouse = "horde",
+    faction = scanContext.faction,
+    auctionHouse = scanContext.faction:lower(),
     zone = scanContext.zone,
     zoneMapID = scanContext.zoneMapID,
     scannedAt = type(GetServerTime) == "function" and GetServerTime() or time(),
@@ -132,7 +144,12 @@ local function saveCompleteScan(kind, rows, scanContext)
     itemCount = itemCount,
     items = items,
   }
-  notify("Saved " .. itemCount .. " relevant item prices from the " .. scanContext.zone .. " Horde auction house. Log out or /reload to write the SavedVariables file.")
+  if scanContext.faction == "Horde" then
+    FWL_HORDE_SCAN = snapshot
+  else
+    FWL_ALLIANCE_SCAN = snapshot
+  end
+  notify("Saved " .. itemCount .. " relevant item prices from the " .. scanContext.zone .. " " .. scanContext.faction .. " auction house. Log out or /reload to write the SavedVariables file.")
   return true
 end
 
@@ -148,7 +165,7 @@ function listener:ReceiveEvent(eventName, rows)
     local scanContext = context()
     pending = scanContext and { kind = event.kind, context = scanContext } or nil
     if not pending then
-      notify("Scan ignored: this is not a recognized Horde capital auction house.")
+      notify("Scan ignored: this is not a recognized Horde or Alliance capital auction house on Forever beta.")
     end
   elseif event.phase == "failed" then
     if pending and pending.kind == event.kind then
@@ -160,6 +177,7 @@ function listener:ReceiveEvent(eventName, rows)
     local ended = context()
     if not started or started.kind ~= event.kind or not ended
         or started.context.realm ~= ended.realm
+        or started.context.faction ~= ended.faction
         or started.context.zoneMapID ~= ended.zoneMapID then
       return
     end

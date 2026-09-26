@@ -103,6 +103,40 @@ test('selects the affordable available recipe when one item has two professions'
   assert.equal(lowStock.steps[0].profession, 'Leatherworking');
 });
 
+test('faction eligibility excludes direct and nested Horde-only recipes from Alliance DIY quotes', () => {
+  const restricted = { ...recipe(7929, [[200, 2]]), name: 'Orcish War Leggings', allowedFactions: ['horde'] };
+  const dataset = data([restricted, recipe(100, [[7929, 1]])], [[200]]);
+  let priceCalls = 0;
+  const prices = () => { priceCalls++; return { min: 5, quantity: 100 }; };
+  for (const itemId of [7929, 100]) {
+    const alliance = quote({ itemId, qty: 1 }, dataset, prices, 'alliance');
+    assert.equal(alliance.cost, null);
+    assert.equal(alliance.enough, false);
+    assert.equal(alliance.unavailable, true);
+    assert.match(alliance.reason, /Orcish War Leggings.*Horde.*Alliance/);
+    assert.equal(alliance.steps.length, 0);
+    assert.equal(alliance.materials.length, 0);
+    assert.ok(quote({ itemId, qty: 1 }, dataset, prices, 'horde').cost > 0);
+    assert.ok(quote({ itemId, qty: 1 }, dataset, prices).cost > 0, 'omitted faction preserves old quotes');
+  }
+  assert.equal(priceCalls, 4, 'restricted quotes never request material prices');
+  assert.throws(() => quote({ itemId: 7929, qty: 1 }, dataset, prices, 'neutral'), /Faction must/);
+  dataset.recipes[7929].allowedFactions = ['horde', 'horde'];
+  assert.throws(() => quote({ itemId: 7929, qty: 1 }, dataset, prices, 'alliance'), /Invalid faction eligibility/);
+});
+
+test('eligible alternate recipes remain available when another variant is faction restricted', () => {
+  const restricted = { ...recipe(100, [[200, 1]]), allowedFactions: ['horde'] };
+  const shared = { ...recipe(100, [[300, 1]]), spellId: 2000 };
+  const dataset = data([restricted], [[200], [300]]);
+  dataset.recipes[100] = [restricted, shared];
+  const result = quote({ itemId: 100, qty: 1 }, dataset, id => ({ min: id === 200 ? 1 : 10, quantity: 10 }), 'alliance');
+  assert.equal(result.cost, 10);
+  assert.equal(result.enough, true);
+  assert.equal(result.steps[0].spellId, 2000);
+  assert.equal(result.alternatives.find(alt => alt.spellId === restricted.spellId).unavailable, true);
+});
+
 test('a gathered good uses its auction value without inventing a recipe', () => {
   const dataset = data([], [[200]]);
   const result = quote({ itemId: 200, qty: 5 }, dataset, () => ({ min: 17, quantity: 30 }));
@@ -126,4 +160,8 @@ test('every crate choice and writ target resolves through the published crafting
   assert.equal(dataset.recipes[8069].outputMin, 200, 'Crafted Solid Shot yield');
   assert.equal(dataset.recipes[4380].outputMin, 2, 'Big Bronze Bomb minimum yield');
   assert.equal(dataset.recipes[4380].outputMax, 4, 'Big Bronze Bomb maximum yield');
+  assert.equal(dataset.recipes[7929].allowedFactions[0], 'horde', 'Orcish War Leggings plan is Horde-only');
+  const allianceQuote = quote({ itemId: 7929, qty: 1 }, dataset, () => ({ min: 1, quantity: 100000 }), 'alliance');
+  assert.equal(allianceQuote.unavailable, true);
+  assert.equal(allianceQuote.cost, null);
 });

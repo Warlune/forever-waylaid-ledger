@@ -1,15 +1,29 @@
 /* The build replaces __WAYLAID_ASSETS__ with the site's static files. */
 const ASSETS = __WAYLAID_ASSETS__;
 
-const MARKET = 'forever.pvp.horde.us';
 const PAGES_ORIGIN = 'https://warlune.github.io';
 const REALM_KEY = 'classicbetapvp2';
-const BUCKET_KEY = 'owner-scans/forever-pvp-horde-us.json';
-const HORDE_CITY_MAPS = Object.freeze({
-  Orgrimmar: 1454,
-  'Thunder Bluff': 1456,
-  Undercity: 1458,
-  'Silvermoon City': 1954
+// A market is eligible only when its faction, auction house, realm and city agree.
+// Other Forever realm types still use AHledger until their realm names are verified.
+const MARKETS = Object.freeze({
+  'forever.pvp.horde.us': Object.freeze({
+    faction: 'Horde', auctionHouse: 'horde', bucketKey: 'owner-scans/forever-pvp-horde-us.json',
+    cities: Object.freeze({
+      Orgrimmar: 1454,
+      'Thunder Bluff': 1456,
+      Undercity: 1458,
+      'Silvermoon City': 1954
+    })
+  }),
+  'forever.pvp.alliance.us': Object.freeze({
+    faction: 'Alliance', auctionHouse: 'alliance', bucketKey: 'owner-scans/forever-pvp-alliance-us.json',
+    cities: Object.freeze({
+      'Stormwind City': 1453,
+      Ironforge: 1455,
+      Darnassus: 1457,
+      'The Exodar': 1947
+    })
+  })
 });
 const MAX_BODY_BYTES = 2 * 1024 * 1024;
 const MAX_PRICES = 50000;
@@ -40,8 +54,8 @@ function allowPagesRead(request, response) {
   return response;
 }
 
-function validMarket(value) {
-  return value === MARKET;
+function marketConfig(value) {
+  return typeof value === 'string' && Object.hasOwn(MARKETS, value) ? MARKETS[value] : null;
 }
 
 async function tokenMatches(provided, expected) {
@@ -88,9 +102,10 @@ async function readLimitedBody(request) {
 function validateScan(input) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw new TypeError('Invalid scan.');
   if (input.schemaVersion !== 1) throw new TypeError('Unsupported scan format.');
-  if (!validMarket(input.market)) throw new TypeError('Wrong auction market.');
-  if (input.faction !== 'Horde' || input.auctionHouse !== 'horde') {
-    throw new TypeError('Only a verified Horde faction auction house scan is accepted.');
+  const market = marketConfig(input.market);
+  if (!market) throw new TypeError('Wrong auction market.');
+  if (input.faction !== market.faction || input.auctionHouse !== market.auctionHouse) {
+    throw new TypeError('Scan faction and auction house do not match the market.');
   }
   if (typeof input.realm !== 'string' || input.realm.length < 1 || input.realm.length > 100 ||
       input.realm.trim() !== input.realm || /[\x00-\x1f<>\\]/.test(input.realm)) {
@@ -99,8 +114,8 @@ function validateScan(input) {
   if (input.realm.replace(/[^a-z0-9]/gi, '').toLowerCase() !== REALM_KEY) {
     throw new TypeError('Scan is from a different realm.');
   }
-  if (!Object.hasOwn(HORDE_CITY_MAPS, input.zone) ||
-      input.zoneMapID !== HORDE_CITY_MAPS[input.zone]) {
+  if (!Object.hasOwn(market.cities, input.zone) ||
+      input.zoneMapID !== market.cities[input.zone]) {
     throw new TypeError('Auction house location is unknown or neutral.');
   }
   if (input.scanType !== 'incremental' && input.scanType !== 'full') {
@@ -131,10 +146,10 @@ function validateScan(input) {
   }
   return {
     schemaVersion: 1,
-    market: MARKET,
+    market: input.market,
     realm: input.realm,
-    faction: 'Horde',
-    auctionHouse: 'horde',
+    faction: market.faction,
+    auctionHouse: market.auctionHouse,
     zone: input.zone,
     zoneMapID: input.zoneMapID,
     scanType: input.scanType,
@@ -143,24 +158,28 @@ function validateScan(input) {
   };
 }
 
-async function readSavedScan(bucket) {
-  const object = await bucket.get(BUCKET_KEY);
+async function readSavedScan(bucket, marketName) {
+  const market = marketConfig(marketName);
+  if (!market) throw new TypeError('Unsupported market.');
+  const object = await bucket.get(market.bucketKey);
   if (!object) return null;
   const saved = JSON.parse(await object.text());
   if (!saved || !Number.isSafeInteger(saved.completedAt) ||
-      saved.market !== MARKET || saved.faction !== 'Horde' || saved.auctionHouse !== 'horde' ||
+      saved.market !== marketName || saved.faction !== market.faction || saved.auctionHouse !== market.auctionHouse ||
       !Array.isArray(saved.prices)) throw new Error('Stored owner scan is invalid.');
   return { object, saved };
 }
 
 async function getOwnerScan(request, env, url) {
-  if (!validMarket(url.searchParams.get('market'))) return error('Unsupported market.', 400);
+  const marketName = url.searchParams.get('market');
+  const market = marketConfig(marketName);
+  if (!market) return error('Unsupported market.', 400);
   if (!env.BUCKET) return error('Owner scans are temporarily unavailable.', 503);
   try {
-    const current = await readSavedScan(env.BUCKET);
-    if (!current) return error('No verified Horde scan has been published yet.', 404);
-    const { schemaVersion, market, faction, auctionHouse, completedAt, prices } = current.saved;
-    return json({ schemaVersion, market, faction, auctionHouse, completedAt, prices });
+    const current = await readSavedScan(env.BUCKET, marketName);
+    if (!current) return error(`No verified ${market.faction} scan has been published yet.`, 404);
+    const { schemaVersion, market: savedMarket, faction, auctionHouse, completedAt, prices } = current.saved;
+    return json({ schemaVersion, market: savedMarket, faction, auctionHouse, completedAt, prices });
   } catch (failure) {
     console.error('Owner scan read failed:', failure);
     return error('Owner scans are temporarily unavailable.', 503);
@@ -184,19 +203,20 @@ async function postOwnerScan(request, env) {
     return error(message, failure instanceof RangeError ? 413 : 400);
   }
   try {
+    const market = marketConfig(scan.market);
     for (let attempt = 0; attempt < 4; attempt++) {
-      const current = await readSavedScan(env.BUCKET);
+      const current = await readSavedScan(env.BUCKET, scan.market);
       if (current && scan.completedAt < current.saved.completedAt) {
         return error('An older scan cannot replace the public scan.', 409);
       }
       if (current && scan.completedAt === current.saved.completedAt) {
-        return json({ ok: true, unchanged: true, market: MARKET, completedAt: scan.completedAt });
+        return json({ ok: true, unchanged: true, market: scan.market, completedAt: scan.completedAt });
       }
-      const written = await env.BUCKET.put(BUCKET_KEY, JSON.stringify(scan), {
+      const written = await env.BUCKET.put(market.bucketKey, JSON.stringify(scan), {
         onlyIf: current ? { etagMatches: current.object.etag } : { etagDoesNotMatch: '*' },
         httpMetadata: { contentType: 'application/json', cacheControl: 'no-store' }
       });
-      if (written) return json({ ok: true, market: MARKET, completedAt: scan.completedAt, prices: scan.prices.length }, 201);
+      if (written) return json({ ok: true, market: scan.market, completedAt: scan.completedAt, prices: scan.prices.length }, 201);
     }
     return error('Another scan was published at the same time. Retry.', 409);
   } catch (failure) {

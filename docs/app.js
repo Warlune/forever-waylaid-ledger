@@ -3,11 +3,11 @@ const OWNER_SCAN_API = location.hostname === 'warlune.github.io' &&
   location.pathname.startsWith('/forever-waylaid-ledger/')
   ? 'https://forever-waylaid-ledger.warlune.chatgpt.site/api/owner-scan'
   : '/api/owner-scan';
-const OWNER_MARKET = 'forever.pvp.horde.us';
 const FACTIONS = {
   horde: { name: 'Horde', factionName: 'Durotar Supply and Logistics', themeColor: '#17130e' },
   alliance: { name: 'Alliance', factionName: 'Azeroth Commerce Authority', themeColor: '#0b1729' }
 };
+const OWNER_MARKETS = new Set(Object.keys(FACTIONS).map(faction => `forever.pvp.${faction}.us`));
 const MARKET_TYPES = ['pvp', 'normal', 'rp'];
 const state = {
   catalog: null, recipes: null, recipeError: '', vendors: null, catalogIds: new Set(), prices: new Map(), market: 'forever.pvp.horde.us',
@@ -105,8 +105,8 @@ function renderStatus() {
   }
   if (state.prices.size === 0) {
     status.classList.add('notice-error');
-    status.textContent = state.market === OWNER_MARKET && state.preference === 'owner' && !state.feeds.owner ?
-      'No verified owner scan is published for this Horde market yet. AHledger remains available in Price source.' :
+    status.textContent = OWNER_MARKETS.has(state.market) && state.preference === 'owner' && !state.feeds.owner ?
+      'No verified owner scan is published for this ' + FACTIONS[state.faction].name + ' market yet. AHledger remains available in Price source.' :
       'No player auction scan is available for this ' + FACTIONS[state.faction].name + ' market yet. Requirements remain visible below.';
     return;
   }
@@ -114,7 +114,7 @@ function renderStatus() {
   const when = state.scanTime ? new Date(state.scanTime * 1000).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : 'unknown time';
   const hoursOld = state.scanTime ? (Date.now() - state.scanTime * 1000) / 3600000 : null;
   const source = state.source === 'owner' ?
-    'Verified Horde Auctionator scan' + (state.merged ? ' + <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger fallback</a>' : '') :
+    'Verified ' + FACTIONS[state.faction].name + ' Auctionator scan' + (state.merged ? ' + <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger fallback</a>' : '') :
     '<a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger ' + FACTIONS[state.faction].name + ' scan</a>';
   const other = state.source === 'owner' ? state.feeds.public : state.feeds.owner;
   const otherName = state.source === 'owner' ? 'AHledger' : 'owner scan';
@@ -132,7 +132,7 @@ function crateMetrics(crate, method = 'buy') {
   const options = crate.options.map(option => {
     const listing = price(option.itemId);
     const buyFillCost = listing ? listing.min * option.qty : null;
-    const craftQuote = craftMode && state.recipes && window.Crafting ? window.Crafting.quote(option, state.recipes, price) : null;
+    const craftQuote = craftMode && state.recipes && window.Crafting ? window.Crafting.quote(option, state.recipes, price, state.faction) : null;
     return { ...option, listing, buyFillCost, craftQuote,
       fillCost: craftMode ? craftQuote?.cost ?? null : buyFillCost,
       enough: craftMode ? !!craftQuote?.enough : stockSufficient(listing, option.qty) };
@@ -148,7 +148,7 @@ function writMetrics(writ, method = 'buy') {
   const validQty = Number.isInteger(writ.qty) && writ.qty > 0;
   const craftMode = method === 'craft';
   const craftQuote = craftMode && validQty && state.recipes && window.Crafting ?
-    window.Crafting.quote({ itemId: writ.targetId, qty: writ.qty }, state.recipes, price) : null;
+    window.Crafting.quote({ itemId: writ.targetId, qty: writ.qty }, state.recipes, price, state.faction) : null;
   const materialsReady = validQty && (craftMode ? !!craftQuote?.enough : stockSufficient(materialPrice, writ.qty));
   const writReady = state.owned || stockSufficient(writPrice, 1);
   const materialsCost = craftMode ? craftQuote?.cost ?? null : validQty && materialPrice ? materialPrice.min * writ.qty : null;
@@ -205,6 +205,7 @@ function overview(label, value, note) {
 function craftBreakdown(option) {
   const quote = option.craftQuote;
   if (!quote) return '<p class="craft-warning">' + esc(state.recipeError || 'Verified recipes are unavailable right now.') + '</p>';
+  if (quote.unavailable) return '<p class="craft-warning">' + esc(quote.reason) + '</p>';
   const materials = quote.materials.map(material => '<div class="craft-material-row"><span class="craft-material-name">' +
     itemLink(material.itemId, material.name) + '</span><span class="craft-material-qty">' + num(material.qty) + ' ×</span>' +
     '<span class="craft-material-price">' + gold(material.unitCopper) + ' each</span><strong class="craft-material-total">' +
@@ -278,9 +279,10 @@ function writRow(writ, m, score) {
   const quest = writ.questId ? '<a href="https://www.wowhead.com/forever/quest=' + Number(writ.questId) + '" target="_blank" rel="noopener noreferrer">Quest details ↗</a>' : '';
   const shortName = writ.name.replace(/^Craftsman's Writ:\s*/i, '');
   const goods = num(writ.qty) + ' × ' + writ.targetName;
+  const goodsSummary = goods + (m.craftQuote?.unavailable ? ' · DIY unavailable' : '');
   return '<details class="result-row ' + (score ? 'value-' + score.band : 'value-neutral') + '" data-id="' + esc(writ.id) + '"><summary class="row-summary">' +
     '<div class="row-main"><span class="tier">CRAFTSMAN’S WRIT</span><h2><span class="sr-only">Craftsman’s Writ: </span>' + esc(shortName) + '</h2></div>' +
-    '<span class="row-requirement" title="' + esc(goods) + '">' + esc(goods) + '</span><span class="row-reward">' + num(writ.rep) +
+    '<span class="row-requirement" title="' + esc(m.craftQuote?.reason || goods) + '">' + esc(goodsSummary) + '</span><span class="row-reward">' + num(writ.rep) +
     ' rep</span><strong class="row-total">' + gold(m.total) + '</strong><strong class="row-eff">' + ratio(m.total, writ.rep) +
     '</strong>' + valueBadge(score, m.materialsReady ? 'Writ unlisted' : 'Unpriced') + '<span class="chevron" aria-hidden="true">⌄</span></summary>' +
     '<div class="detail"><div class="cost-overview">' +
@@ -443,14 +445,17 @@ function registerComparisonTool() {
 
 function parseOwnerSnapshot(raw, market) {
   const data = JSON.parse(raw);
-  if (data.market !== market || data.auctionHouse !== 'horde' || data.faction !== 'Horde' ||
-      !Number.isInteger(data.completedAt) || !Array.isArray(data.prices)) {
+  const faction = market.split('.')[2];
+  if (!OWNER_MARKETS.has(market) || !data || typeof data !== 'object' || Array.isArray(data) ||
+      data.schemaVersion !== 1 || data.market !== market || data.auctionHouse !== faction ||
+      data.faction !== FACTIONS[faction].name ||
+      !Number.isSafeInteger(data.completedAt) || data.completedAt <= 0 || !Array.isArray(data.prices)) {
     throw new Error('The owner scan has an unexpected market or format.');
   }
   const prices = new Map();
   for (const row of data.prices) {
-    if (!Number.isInteger(row.itemId) || !Number.isInteger(row.price) || row.price <= 0 ||
-        (row.quantity != null && (!Number.isInteger(row.quantity) || row.quantity < 0))) continue;
+    if (!row || !Number.isSafeInteger(row.itemId) || !Number.isSafeInteger(row.price) || row.price <= 0 ||
+        (row.quantity != null && (!Number.isSafeInteger(row.quantity) || row.quantity < 0))) continue;
     if (state.catalogIds.has(row.itemId)) prices.set(row.itemId, {
       median: null, min: row.price, quantity: row.quantity ?? null
     });
@@ -487,7 +492,7 @@ function applyFeedSelection() {
 async function loadPrices(sources = ['public', 'owner'], quiet = false) {
   const market = state.market;
   const generation = state.marketGeneration;
-  const requestedSources = sources.filter(source => source === 'public' || (source === 'owner' && market === OWNER_MARKET));
+  const requestedSources = sources.filter(source => source === 'public' || (source === 'owner' && OWNER_MARKETS.has(market)));
   if (!requestedSources.length) return;
   if (!quiet && !state.feeds.public && !state.feeds.owner) {
     state.priceState = 'loading';
@@ -561,17 +566,20 @@ function setFaction(faction, { market = null, animate = true } = {}) {
     button.setAttribute('aria-pressed', String(button.dataset.factionChoice === faction));
   });
   const ownerOption = $('#price-source option[value="owner"]');
-  ownerOption.disabled = nextMarket !== OWNER_MARKET;
-  ownerOption.hidden = nextMarket !== OWNER_MARKET;
+  const ownerAvailable = OWNER_MARKETS.has(nextMarket);
+  ownerOption.disabled = !ownerAvailable;
+  ownerOption.hidden = !ownerAvailable;
   ownerOption.textContent = 'Owner scan + AHledger';
-  if (nextMarket !== OWNER_MARKET && state.preference === 'owner') state.preference = 'auto';
+  if (!ownerAvailable && state.preference === 'owner') state.preference = 'auto';
   $('#price-source').value = state.preference;
-  $('#scan-help-copy').innerHTML = faction === 'horde' ?
-    'AHledger prices refresh from its Horde market feed. The site owner’s completed Auctionator scans publish after WoW saves them on <code>/reload</code> or logout. Missing items use the AHledger Horde feed. Only scans captured at confirmed Horde city auction houses qualify; Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.' :
-    'AHledger prices refresh from its Alliance market feed. The site owner’s automatic Auctionator scan currently covers only the Horde PvP market. Alliance prices here come from the separate Alliance auction market; Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.';
-  $('#price-credit').innerHTML = faction === 'horde' ?
-    'Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a> or the site owner’s verified Horde auction scans. Missing owner-scan items use AHledger. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.' :
-    'Alliance prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a>. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.';
+  $('#scan-help-copy').innerHTML = 'AHledger prices refresh from its ' + FACTIONS[faction].name + ' market feed. ' +
+    (ownerAvailable ?
+      'The site owner’s completed Auctionator scans publish after WoW saves them on <code>/reload</code> or logout. Missing owner-scan items use the matching AHledger feed. Only scans captured at confirmed ' + FACTIONS[faction].name + ' city auction houses qualify. ' :
+      'Owner scans are currently available for the PvP ' + FACTIONS[faction].name + ' market. This market uses AHledger prices. ') +
+    'Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.';
+  $('#price-credit').innerHTML = 'Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a>' +
+    (ownerAvailable ? ' or the site owner’s verified ' + FACTIONS[faction].name + ' auction scans. Missing owner-scan items use AHledger.' : '.') +
+    ' Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.';
   window.ShoppingTab?.setFaction?.(faction);
   if (factionChanged && animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const overlay = $('#faction-transition');
@@ -643,7 +651,7 @@ async function initialize() {
       state.catalogIds.add(writ.targetId);
     });
     try {
-      const response = await fetch('./recipes.json?v=2');
+      const response = await fetch('./recipes.json?v=3');
       if (!response.ok) throw new Error('Crafting recipes could not load.');
       const recipes = await response.json();
       if (recipes.metadata?.clientBuild !== state.catalog.metadata.clientBuild ||
