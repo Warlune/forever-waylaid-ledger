@@ -2,7 +2,7 @@
 
 A community price and turn-in planner for Waylaid Crates and Craftsman's Writs on the WoW Forever beta. It compares finished-goods buyouts with crafting from raw materials, and uses faction-specific auction data when available.
 
-[Open the current site](https://forever-waylaid-ledger.warlune.chatgpt.site/)
+[Open the ledger](https://warlune.github.io/forever-waylaid-ledger/)
 
 ## Project layout
 
@@ -13,9 +13,13 @@ A community price and turn-in planner for Waylaid Crates and Craftsman's Writs o
 
 ## GitHub Pages
 
-The static site is in `docs/`. In repository **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/docs**. Its address will be `https://warlune.github.io/forever-waylaid-ledger/`.
+The public site is published from `main` and `/docs` at `https://warlune.github.io/forever-waylaid-ledger/`.
 
 When browser files change, run `node scripts/export-pages.mjs` and commit both `dist/` and `docs/`. The existing hosted API remains necessary for shared owner scans. Do not put the upload token or local sync configuration in this repository.
+
+## Privacy
+
+The public price API shares item prices and scan time, without a character name, account name, auction city, raw SavedVariables file, or upload token. Opening the Shopping tab loads Wowhead's script to show detailed item tooltips. The local upload token belongs only in `%LOCALAPPDATA%\ForeverWaylaidLedger\sync-config.json`, outside this repository.
 
 ## Checks
 
