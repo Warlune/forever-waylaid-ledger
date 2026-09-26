@@ -1,0 +1,100 @@
+/* Craft estimates share the compact ledger layout and faction color tokens. */
+#fill-mode-filter select { min-width: 185px; }
+
+.craft-mode-note {
+  margin: 2px 0 6px;
+  padding: 8px 11px;
+  border: 1px solid var(--accent-border, var(--edge));
+  border-radius: 6px;
+  background: var(--plan-bg, var(--surface2));
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.craft-mode-note strong { color: var(--gold2); }
+
+.craft-option-row { align-items: start; }
+.craft-option-row .option-name { align-self: center; }
+.craft-option-row .option-number { align-self: center; }
+.craft-option-row .option-name small { line-height: 1.35; }
+.craft-warning { color: var(--value-low, var(--gold2)); }
+
+.craft-breakdown {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  border-top: 1px solid var(--edge);
+  padding-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.craft-breakdown summary {
+  width: fit-content;
+  padding: 3px 1px;
+  color: var(--gold2);
+  font-weight: 700;
+  cursor: pointer;
+}
+.craft-breakdown summary:hover { text-decoration: underline; }
+.craft-breakdown[open] summary { margin-bottom: 7px; }
+.craft-breakdown p { margin: 5px 2px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+.craft-breakdown .craft-warning { color: var(--value-low, var(--gold2)); }
+.craft-step-main .craft-warning { display: block; margin-top: 2px; }
+.craft-breakdown a { color: var(--gold2); text-underline-offset: 2px; }
+.craft-breakdown a:hover { color: var(--text); }
+.craft-breakdown h4 {
+  margin: 9px 0 5px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.craft-material-list, .craft-step-list { display: grid; gap: 1px; }
+.craft-material-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 66px 108px 108px 96px;
+  align-items: baseline;
+  column-gap: 10px;
+  padding: 5px 7px;
+  border-radius: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.craft-material-row:nth-child(odd), .craft-step:nth-child(odd) { background: var(--stripe-bg, var(--surface2)); }
+.craft-material-name { min-width: 0; overflow-wrap: anywhere; }
+.craft-material-qty, .craft-material-price, .craft-material-total { text-align: right; white-space: nowrap; }
+.craft-material-total { color: var(--text); font-weight: 700; }
+.craft-material-source, .craft-source { color: var(--muted); font-size: 10px; }
+.craft-material-source { text-align: right; }
+.craft-material-row a { color: var(--text); }
+
+.craft-step {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+.craft-step-main { min-width: 0; overflow-wrap: anywhere; }
+.craft-step-meta { flex: none; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.craft-source { margin: 8px 2px 2px; line-height: 1.4; }
+
+@media (max-width: 850px) {
+  #fill-mode-filter select { min-width: 155px; }
+  .craft-material-row { grid-template-columns: minmax(105px, 1fr) 45px 92px 92px 76px; column-gap: 6px; }
+}
+@media (max-width: 760px) {
+  #fill-mode-filter select { width: 155px; min-width: 0; }
+}
+@media (max-width: 560px) {
+  #fill-mode-filter select { width: 100%; }
+  .craft-breakdown { font-size: 10px; }
+  .craft-material-row { grid-template-columns: minmax(0, 1fr) 42px 78px; row-gap: 1px; }
+  .craft-material-price { grid-column: 1; grid-row: 2; text-align: left; color: var(--muted); }
+  .craft-material-total { grid-column: 3; grid-row: 1; }
+  .craft-material-source { grid-column: 2 / 4; grid-row: 2; text-align: right; }
+  .craft-step { display: grid; gap: 1px; }
+  .craft-step-meta { text-align: left; }
+}

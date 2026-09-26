@@ -1,0 +1,140 @@
+html[data-faction="horde"] {
+  --bg: #17130e;
+  --surface: #261f17;
+  --surface2: #34291e;
+  --edge: #604d37;
+  --text: #f6eddc;
+  --muted: #c9b9a0;
+  --gold: #d7a951;
+  --gold2: #f2ce82;
+  --green: #a4c99b;
+  --detail-bg: #1e1812;
+  --hover-bg: #382b1e;
+  --best-bg: #382c1e;
+  --stripe-bg: #2d241a;
+  --plan-bg: #2d251b;
+  --accent-border: #846a45;
+  --ember: #bd6751;
+  --flash: rgba(215, 169, 81, .24);
+}
+
+html[data-faction="alliance"] {
+  --bg: #0b1729;
+  --surface: #172942;
+  --surface2: #203755;
+  --edge: #3b5d82;
+  --text: #f1f6ff;
+  --muted: #bed0e5;
+  --gold: #e3b960;
+  --gold2: #ffe0a0;
+  --green: #87c6b0;
+  --detail-bg: #101f35;
+  --hover-bg: #234061;
+  --best-bg: #2b3c51;
+  --stripe-bg: #1b304b;
+  --plan-bg: #22334a;
+  --accent-border: #a98b56;
+  --flash: rgba(90, 151, 238, .35);
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+  transition: background-color .58s ease, color .58s ease;
+}
+body::before, body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .72s ease;
+}
+body::before { background: radial-gradient(circle at 8% 0%, rgba(151, 105, 44, .23), transparent 36%), radial-gradient(circle at 96% 2%, rgba(150, 65, 49, .07), transparent 28%); }
+body::after { background: radial-gradient(circle at 8% 0%, rgba(55, 105, 178, .34), transparent 34%), radial-gradient(circle at 96% 2%, rgba(170, 133, 55, .13), transparent 28%); }
+html[data-faction="horde"] body::before, html[data-faction="alliance"] body::after { opacity: 1; }
+.shell { position: relative; z-index: 1; }
+
+.site-header, .faction-switch, .faction-choice, .realm-tag, select, input, .notice,
+.result-row, .row-summary, .detail, .cost-overview>div, .option-row,
+.shop-panel, .vendor-tab, .vendor-item, .shop-plan, .info-intro,
+.info-path, .info-card, .info-beta-note, .refresh {
+  transition: background-color .58s ease, border-color .58s ease, color .58s ease, box-shadow .58s ease;
+}
+
+.header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 11px; min-width: 0; }
+.realm-tag { white-space: nowrap; border-color: var(--edge); color: var(--gold2); }
+.faction-switch { display: flex; align-items: center; gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 10px; background: var(--surface); box-shadow: inset 0 1px 2px rgba(0,0,0,.22); }
+.faction-choice { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-width: 89px; height: 34px; padding: 2px 7px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 750; cursor: pointer; line-height: 1; }
+.faction-choice img { width: 24px; height: 24px; object-fit: contain; filter: saturate(.7); transition: filter .5s ease, transform .5s ease; }
+.faction-choice:hover img { transform: scale(1.12); }
+.faction-choice[aria-pressed="true"] { border-color: var(--accent-border); background: var(--surface2); color: var(--text); box-shadow: 0 0 14px var(--flash), inset 0 1px rgba(255,255,255,.08); }
+.faction-choice[aria-pressed="true"] img { filter: saturate(1.14) drop-shadow(0 0 4px var(--flash)); }
+html[data-faction="horde"] .brand-mark { color: var(--ember); }
+html[data-faction="horde"] .site-header { border-bottom-color: #765044; box-shadow: inset 0 -1px rgba(189, 103, 81, .2); }
+html[data-faction="horde"] #faction-eyebrow::before { content: "◆"; margin-right: 7px; color: var(--ember); font-size: 9px; text-shadow: 0 0 8px rgba(189, 103, 81, .3); }
+html[data-faction="horde"] h1 { position: relative; }
+html[data-faction="horde"] h1::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 54px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--ember), rgba(189, 103, 81, 0)); }
+html[data-faction="horde"] .tab.active { position: relative; }
+html[data-faction="horde"] .tab.active::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 24px; height: 3px; background: var(--ember); }
+html[data-faction="horde"] .faction-choice[aria-pressed="true"] { border-color: var(--gold); color: var(--gold2); box-shadow: 0 0 12px var(--flash), inset 2px 0 var(--ember); }
+html[data-faction="horde"] .refresh,
+html[data-faction="horde"] .shop-stepper button,
+html[data-faction="horde"] .shop-cart-row button { border-color: var(--accent-border); color: var(--gold2); }
+html[data-faction="horde"] .refresh,
+html[data-faction="horde"] .vendor-tab.active { box-shadow: inset 3px 0 var(--ember); }
+html[data-faction="horde"] .refresh:hover,
+html[data-faction="horde"] .refresh:focus-visible { background: var(--best-bg); border-color: var(--gold); }
+
+.notice { border-color: var(--accent-border); background: var(--plan-bg); color: var(--text); }
+.notice-stale { border-color: var(--accent-border); background: var(--plan-bg); }
+.notice-error { background: #3b2525; border-color: #8e4c4c; color: #ffd6c8; }
+.row-summary:hover { background: var(--hover-bg); }
+.detail { background: var(--detail-bg); }
+.option-row.best-option { border-color: var(--accent-border); background: var(--best-bg); }
+.vendor-tab.active { border-color: var(--gold); background: var(--best-bg); }
+.vendor-tab small, .shop-stepper button, .shop-cart-row button, .info-step { background: var(--surface2); }
+.vendor-item { border-bottom-color: var(--edge); }
+.vendor-item:nth-child(2n) { background: var(--stripe-bg); }
+.shop-plan { border-color: var(--accent-border); background: var(--plan-bg); }
+.shop-gold-outlay { border-top-color: var(--edge); }
+.info-intro { background: linear-gradient(115deg, var(--surface2), var(--surface) 76%); }
+.info-source-chip, .info-beta-note { border-color: var(--accent-border); }
+.info-source-chip:hover, .info-path-icon { background: var(--best-bg); }
+.info-path-rep .info-path-icon { background: var(--stripe-bg); }
+.info-step { color: var(--gold2); }
+.info-path-foot, .info-beta-note { color: var(--muted); }
+.info-beta-note { background: var(--plan-bg); }
+
+.faction-transition { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; visibility: hidden; opacity: 0; pointer-events: none; }
+.faction-transition::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, var(--flash), transparent 52%); }
+.faction-transition.is-active { visibility: visible; animation: faction-veil .7s ease both; }
+.faction-transition-rune { position: relative; width: 124px; height: 124px; display: grid; place-items: center; }
+.faction-transition-rune::before { content: ""; position: absolute; inset: 7px; border: 2px solid var(--gold2); border-radius: 50%; box-shadow: 0 0 28px var(--flash), inset 0 0 20px var(--flash); }
+.faction-transition-rune img { position: relative; width: 96px; height: 96px; filter: drop-shadow(0 0 22px var(--flash)); }
+.faction-transition.is-active .faction-transition-rune { animation: faction-sigil .7s cubic-bezier(.2,.85,.27,1) both; }
+.faction-transition.is-active .faction-transition-rune::before { animation: faction-ring .7s ease-out both; }
+@keyframes faction-veil { 0% { opacity: 0; } 22% { opacity: .95; } 55% { opacity: .85; } 100% { opacity: 0; } }
+@keyframes faction-sigil { 0% { transform: scale(.45) rotate(-14deg); filter: blur(8px); } 45% { transform: scale(1.18) rotate(2deg); filter: blur(0); } 100% { transform: scale(1.03) rotate(0); filter: blur(0); } }
+@keyframes faction-ring { 0% { transform: scale(.55); opacity: 0; } 36% { opacity: 1; } 100% { transform: scale(1.8); opacity: 0; } }
+
+@media (max-width: 760px) {
+  .header-actions { gap: 7px; }
+  .realm-tag { display: none; }
+  .faction-choice { min-width: 73px; height: 32px; font-size: 11px; }
+  .faction-choice img { width: 22px; height: 22px; }
+}
+@media (max-width: 420px) {
+  .faction-choice { min-width: 38px; width: 38px; padding: 2px; }
+  .faction-choice span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  .brand { letter-spacing: .05em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faction-transition { display: none; }
+  body, body::before, body::after, .site-header, .faction-switch, .faction-choice,
+  .realm-tag, select, input, .notice, .result-row, .row-summary, .detail,
+  .cost-overview>div, .option-row, .shop-panel, .vendor-tab, .vendor-item,
+  .shop-plan, .info-intro, .info-path, .info-card, .info-beta-note, .refresh { transition-duration: .01ms; }
+}

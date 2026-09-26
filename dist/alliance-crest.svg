@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <title>Alliance crest</title>
+  <defs>
+    <linearGradient id="alliance-gold" x1="30" y1="12" x2="101" y2="113" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0B5"/>
+      <stop offset=".45" stop-color="#D9AA49"/>
+      <stop offset="1" stop-color="#8E6025"/>
+    </linearGradient>
+    <linearGradient id="alliance-blue" x1="64" y1="17" x2="64" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#337CC4"/>
+      <stop offset=".58" stop-color="#185291"/>
+      <stop offset="1" stop-color="#102C58"/>
+    </linearGradient>
+    <linearGradient id="lion-gold" x1="44" y1="34" x2="82" y2="94" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1C1"/>
+      <stop offset=".45" stop-color="#E7BC64"/>
+      <stop offset="1" stop-color="#B67A2F"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 6c-13 9-28 13-46 10v46c0 27 17 45 46 60 29-15 46-33 46-60V16C92 19 77 15 64 6Z" fill="#122A4F" stroke="#112441" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M64 10c-13 9-28 13-42 10v42c0 24 15 41 42 55 27-14 42-31 42-55V20c-14 3-29-1-42-10Z" fill="url(#alliance-gold)"/>
+  <path d="M64 19c-11 7-23 11-34 10v33c0 20 12 34 34 46 22-12 34-26 34-46V29c-11 1-23-3-34-10Z" fill="url(#alliance-blue)" stroke="#0D3766" stroke-width="1.5"/>
+  <path d="m64 27 10 9 11-3-2 13 9 8-7 9 5 11-11-1-5 16-10-9-10 9-5-16-11 1 5-11-7-9 9-8-2-13 11 3 10-9Z" fill="url(#lion-gold)" stroke="#9A652B" stroke-linejoin="round" stroke-width="1.5"/>
+  <path d="m48 42 10 6-6 9-8-4 4-11Zm32 0-10 6 6 9 8-4-4-11ZM44 65l11-2-3 10-9-1 1-7Zm40 0-11-2 3 10 9-1-1-7Z" fill="#A97638"/>
+  <path d="m64 39 12 13-4 19-8 11-8-11-4-19 12-13Z" fill="#FFE0A0"/>
+  <path d="m53 55 8 2-4 5-5-2 1-5Zm22 0-8 2 4 5 5-2-1-5Z" fill="#17395F"/>
+  <path d="m59 69 5-3 5 3-5 5-5-5Z" fill="#745027"/>
+  <path d="m64 74-4 6m4-6 4 6" stroke="#9F6B32" stroke-linecap="round" stroke-width="2"/>
+  <path d="M64 13c-10 7-25 12-38 11" stroke="#FFF9D8" stroke-linecap="round" stroke-width="2" opacity=".85"/>
+</svg>

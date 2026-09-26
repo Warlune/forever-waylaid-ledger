@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <title>Horde crest</title>
+  <defs>
+    <linearGradient id="horde-red" x1="64" y1="7" x2="64" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6960"/>
+      <stop offset="0.42" stop-color="#D52C32"/>
+      <stop offset="1" stop-color="#82121E"/>
+    </linearGradient>
+    <linearGradient id="horde-edge" x1="18" y1="24" x2="110" y2="109" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFC7A4"/>
+      <stop offset="0.34" stop-color="#AB202B"/>
+      <stop offset="1" stop-color="#3C101B"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 7 75 29 89 18 87 39 109 40 95 55 114 66 96 72 101 96 79 86 64 120 49 86 27 96 32 72 14 66 33 55 19 40 41 39 39 18 53 29 64 7Z" fill="#260D17" stroke="#260D17" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M64 10 73 34 85 23 83 43 103 44 89 57 107 66 91 69 96 89 76 81 64 112 52 81 32 89 37 69 21 66 39 57 25 44 45 43 43 23 55 34 64 10Z" fill="url(#horde-red)" stroke="url(#horde-edge)" stroke-linejoin="round" stroke-width="2.5"/>
+  <path d="M64 31 80 52 72 64 82 77 64 103 46 77 56 64 48 52 64 31Z" fill="#330D18"/>
+  <path d="m64 40 9 13-9 12-9-12 9-13Zm-1 28-8 9 9 17 9-17-8-9-1 5-1-5Z" fill="#E63D40"/>
+  <path d="m37 49 17 4-6 11-14-1 10-7-7-7Zm54 0-17 4 6 11 14-1-10-7 7-7ZM42 70l12 1-5 10-12 5 5-16Zm44 0-12 1 5 10 12 5-5-16Z" fill="#4B111C"/>
+  <path d="M64 14v15M50 35l-6-11m34 11 6-11" stroke="#FF9D7E" stroke-linecap="round" stroke-width="2" opacity=".68"/>
+</svg>

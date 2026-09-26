@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-faction="horde">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17130e">
+  <meta name="description" content="Compare WoW Forever Waylaid Crates and Craftsman's Writs with live Horde or Alliance auction prices.">
+  <title>Forever Waylaid Ledger</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317130e'/%3E%3Cpath d='M12 18h40l-6 29H18z' fill='none' stroke='%23d7a951' stroke-width='5'/%3E%3Cpath d='M21 18v29m22-29v29' stroke='%23d7a951' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css?v=4">
+  <link rel="stylesheet" href="./details.css?v=4">
+  <link rel="stylesheet" href="./compact.css?v=4">
+  <link rel="stylesheet" href="./shopping.css?v=5">
+  <link rel="stylesheet" href="./info.css?v=4">
+  <link rel="stylesheet" href="./faction.css?v=3">
+  <link rel="stylesheet" href="./crafting.css?v=2">
+  <link rel="stylesheet" href="./coins.css?v=1">
+  <script src="./wowhead-config.js?v=5" defer></script>
+  <script src="./shopping.js?v=8" defer></script>
+  <script src="./info.js?v=4" defer></script>
+  <script src="./crafting.js?v=2" defer></script>
+  <script src="./app.js?v=13" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="site-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">▣</span><span>FOREVER <strong>WAYLAID LEDGER</strong></span></div>
+      <div class="header-actions"><span class="realm-tag">FOREVER BETA</span><div class="faction-switch" role="group" aria-label="Choose faction">
+        <button id="faction-horde" class="faction-choice" type="button" data-faction-choice="horde" aria-pressed="true"><img src="./horde-crest.svg" alt=""><span>Horde</span></button>
+        <button id="faction-alliance" class="faction-choice" type="button" data-faction-choice="alliance" aria-pressed="false"><img src="./alliance-crest.svg" alt=""><span>Alliance</span></button>
+      </div></div>
+    </header>
+    <main>
+      <div class="title-line">
+        <div><p class="eyebrow" id="faction-eyebrow">DUROTAR SUPPLY AND LOGISTICS</p><h1>Turn-in value.</h1></div>
+        <div class="market-control"><label for="market">Auction market</label><select id="market"><option value="forever.pvp.horde.us" selected>PvP · Horde · US</option><option value="forever.normal.horde.us">Normal · Horde · US</option><option value="forever.rp.horde.us">RP · Horde · US</option></select></div>
+      </div>
+      <div class="notice" id="status" role="status">Loading current auction scans…</div>
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Ledger sections"><button id="tab-crates" class="tab active" role="tab" aria-controls="results" aria-selected="true" tabindex="0" data-tab="crates">Waylaid Crates</button><button id="tab-writs" class="tab" role="tab" aria-controls="results" aria-selected="false" tabindex="-1" data-tab="writs">Craftsman's Writs</button><button id="tab-shopping" class="tab" role="tab" aria-controls="results" aria-selected="false" tabindex="-1" data-tab="shopping">Shopping</button><button id="tab-info" class="tab" role="tab" aria-controls="results" aria-selected="false" tabindex="-1" data-tab="info">Info</button></div>
+        <label class="search-wrap"><span class="sr-only">Search turn-ins</span><input id="search" type="search" placeholder="Search crates or materials"></label>
+      </div>
+      <div class="filters">
+        <label class="filter"><span>Tier</span><select id="tier"><option value="all">All tiers</option><option>Apprentice</option><option>Journeyman</option><option>Expert</option><option>Artisan</option></select></label>
+        <label class="filter"><span>Sort by</span><select id="sort"><option value="efficiency">Cost per observed Favor</option><option value="cost">Lowest total cost</option><option value="name">Name</option></select></label>
+        <label class="filter"><span>Price source</span><select id="price-source"><option value="auto">Newest scan</option><option value="owner">Owner Auctionator</option><option value="public">AHledger</option></select></label>
+        <label class="filter" id="fill-mode-filter"><span>Goods pricing</span><select id="fill-mode"><option value="buy">Buy finished goods</option><option value="craft">Craft from raw mats</option></select></label>
+        <label class="owned"><input id="owned" type="checkbox"><span id="owned-label">I already have the crate</span></label>
+        <button class="refresh" id="refresh" type="button">Refresh prices</button>
+      </div>
+      <details class="scan-help"><summary>How shared scans update</summary><p id="scan-help-copy">AHledger prices refresh from its Horde market feed. The site owner’s completed Auctionator scans publish after WoW saves them on <code>/reload</code> or logout. Only scans captured at confirmed Horde city auction houses qualify; Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.</p></details>
+      <section class="workspace" aria-label="Turn-in comparisons">
+        <div class="summary">
+          <span class="summary-count"><strong id="result-count">30 crates</strong><span id="sort-note">Lowest cost per Favor first</span></span>
+          <div class="value-legend" aria-label="Relative value among fully priced turn-ins: green is lowest cost per reward, red is highest; unpriced and unverified are neutral">
+            <span>LOWER COST / REWARD IS BETTER</span><b>Best</b><i class="legend-gradient" aria-hidden="true"></i><b>High cost</b><em>Unpriced = neutral</em>
+          </div>
+        </div>
+        <div id="results" class="results" role="tabpanel" aria-labelledby="tab-crates"><div class="empty">Loading turn-ins…</div></div>
+      </section>
+    </main>
+    <footer><span id="price-credit">Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a> or the site owner’s verified Horde auction scans. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.</span><span>Crate catalogue from the <a href="https://daybreakforever.com/static/forever/datamine.json" target="_blank" rel="noopener noreferrer">Forever beta client</a>, build 1.60.1.70009; writ objectives from <a href="https://www.wowhead.com/forever/quests/eastern-kingdoms/crafting" target="_blank" rel="noopener noreferrer">Wowhead Forever</a>. Unaffiliated with Blizzard.</span></footer>
+  </div>
+  <div class="faction-transition" id="faction-transition" aria-hidden="true"><div class="faction-transition-rune"><img id="transition-crest" src="./horde-crest.svg" alt=""></div></div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: Forever Waylaid Ledger - Horde Scan Capture
+## Notes: Saves a compact snapshot of relevant items after a completed Horde capital Auctionator scan.
+## Version: 1.0.0
+## Dependencies: Auctionator
+## SavedVariables: FWL_HORDE_SCAN
+
+Catalog.lua
+Capture.lua

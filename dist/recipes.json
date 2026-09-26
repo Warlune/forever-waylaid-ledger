@@ -1,0 +1,6189 @@
+{
+  "metadata": {
+    "source": "https://wago.tools/db2",
+    "clientBuild": "1.60.1.70009",
+    "crateCount": 30,
+    "fillOptionCount": 96,
+    "craftedFillOptionCount": 39,
+    "writCount": 150,
+    "verifiedWritTargetCount": 150,
+    "recipeCount": 208,
+    "leafCount": 143,
+    "leaves": {
+      "765": {
+        "itemId": 765,
+        "name": "Silverleaf",
+        "sourceUrl": "https://www.wowhead.com/forever/item=765"
+      },
+      "774": {
+        "itemId": 774,
+        "name": "Malachite",
+        "sourceUrl": "https://www.wowhead.com/forever/item=774"
+      },
+      "783": {
+        "itemId": 783,
+        "name": "Light Hide",
+        "sourceUrl": "https://www.wowhead.com/forever/item=783"
+      },
+      "785": {
+        "itemId": 785,
+        "name": "Mageroyal",
+        "sourceUrl": "https://www.wowhead.com/forever/item=785"
+      },
+      "814": {
+        "itemId": 814,
+        "name": "Flask of Oil",
+        "sourceUrl": "https://www.wowhead.com/forever/item=814"
+      },
+      "818": {
+        "itemId": 818,
+        "name": "Tigerseye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=818"
+      },
+      "1206": {
+        "itemId": 1206,
+        "name": "Moss Agate",
+        "sourceUrl": "https://www.wowhead.com/forever/item=1206"
+      },
+      "1210": {
+        "itemId": 1210,
+        "name": "Shadowgem",
+        "sourceUrl": "https://www.wowhead.com/forever/item=1210"
+      },
+      "1529": {
+        "itemId": 1529,
+        "name": "Jade",
+        "sourceUrl": "https://www.wowhead.com/forever/item=1529"
+      },
+      "1705": {
+        "itemId": 1705,
+        "name": "Lesser Moonstone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=1705"
+      },
+      "2321": {
+        "itemId": 2321,
+        "name": "Fine Thread",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2321",
+        "vendorCopper": 100
+      },
+      "2324": {
+        "itemId": 2324,
+        "name": "Bleach",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2324",
+        "vendorCopper": 25
+      },
+      "2325": {
+        "itemId": 2325,
+        "name": "Black Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2325",
+        "vendorCopper": 1000
+      },
+      "2447": {
+        "itemId": 2447,
+        "name": "Peacebloom",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2447"
+      },
+      "2449": {
+        "itemId": 2449,
+        "name": "Earthroot",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2449"
+      },
+      "2450": {
+        "itemId": 2450,
+        "name": "Briarthorn",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2450"
+      },
+      "2452": {
+        "itemId": 2452,
+        "name": "Swiftthistle",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2452"
+      },
+      "2453": {
+        "itemId": 2453,
+        "name": "Bruiseweed",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2453"
+      },
+      "2589": {
+        "itemId": 2589,
+        "name": "Linen Cloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2589"
+      },
+      "2592": {
+        "itemId": 2592,
+        "name": "Wool Cloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2592"
+      },
+      "2604": {
+        "itemId": 2604,
+        "name": "Red Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2604",
+        "vendorCopper": 50
+      },
+      "2605": {
+        "itemId": 2605,
+        "name": "Green Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2605",
+        "vendorCopper": 100
+      },
+      "2770": {
+        "itemId": 2770,
+        "name": "Copper Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2770"
+      },
+      "2771": {
+        "itemId": 2771,
+        "name": "Tin Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2771"
+      },
+      "2772": {
+        "itemId": 2772,
+        "name": "Iron Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2772"
+      },
+      "2775": {
+        "itemId": 2775,
+        "name": "Silver Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2775"
+      },
+      "2776": {
+        "itemId": 2776,
+        "name": "Gold Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2776"
+      },
+      "2835": {
+        "itemId": 2835,
+        "name": "Rough Stone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2835"
+      },
+      "2836": {
+        "itemId": 2836,
+        "name": "Coarse Stone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2836"
+      },
+      "2838": {
+        "itemId": 2838,
+        "name": "Heavy Stone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2838"
+      },
+      "2880": {
+        "itemId": 2880,
+        "name": "Weak Flux",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2880",
+        "vendorCopper": 100
+      },
+      "2934": {
+        "itemId": 2934,
+        "name": "Ruined Leather Scraps",
+        "sourceUrl": "https://www.wowhead.com/forever/item=2934"
+      },
+      "3182": {
+        "itemId": 3182,
+        "name": "Spider's Silk",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3182"
+      },
+      "3355": {
+        "itemId": 3355,
+        "name": "Wild Steelbloom",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3355"
+      },
+      "3356": {
+        "itemId": 3356,
+        "name": "Kingsblood",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3356"
+      },
+      "3357": {
+        "itemId": 3357,
+        "name": "Liferoot",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3357"
+      },
+      "3358": {
+        "itemId": 3358,
+        "name": "Khadgar's Whisker",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3358"
+      },
+      "3369": {
+        "itemId": 3369,
+        "name": "Grave Moss",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3369"
+      },
+      "3371": {
+        "itemId": 3371,
+        "name": "Empty Vial",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3371",
+        "vendorCopper": 20
+      },
+      "3372": {
+        "itemId": 3372,
+        "name": "Leaded Vial",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3372",
+        "vendorCopper": 200
+      },
+      "3466": {
+        "itemId": 3466,
+        "name": "Strong Flux",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3466",
+        "vendorCopper": 2000
+      },
+      "3818": {
+        "itemId": 3818,
+        "name": "Fadeleaf",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3818"
+      },
+      "3819": {
+        "itemId": 3819,
+        "name": "Wintersbite",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3819"
+      },
+      "3820": {
+        "itemId": 3820,
+        "name": "Stranglekelp",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3820"
+      },
+      "3821": {
+        "itemId": 3821,
+        "name": "Goldthorn",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3821"
+      },
+      "3857": {
+        "itemId": 3857,
+        "name": "Coal",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3857",
+        "vendorCopper": 500
+      },
+      "3858": {
+        "itemId": 3858,
+        "name": "Mithril Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3858"
+      },
+      "3864": {
+        "itemId": 3864,
+        "name": "Citrine",
+        "sourceUrl": "https://www.wowhead.com/forever/item=3864"
+      },
+      "4232": {
+        "itemId": 4232,
+        "name": "Medium Hide",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4232"
+      },
+      "4235": {
+        "itemId": 4235,
+        "name": "Heavy Hide",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4235"
+      },
+      "4289": {
+        "itemId": 4289,
+        "name": "Salt",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4289",
+        "vendorCopper": 50
+      },
+      "4291": {
+        "itemId": 4291,
+        "name": "Silken Thread",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4291",
+        "vendorCopper": 500
+      },
+      "4306": {
+        "itemId": 4306,
+        "name": "Silk Cloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4306"
+      },
+      "4337": {
+        "itemId": 4337,
+        "name": "Thick Spider's Silk",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4337"
+      },
+      "4338": {
+        "itemId": 4338,
+        "name": "Mageweave Cloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4338"
+      },
+      "4340": {
+        "itemId": 4340,
+        "name": "Gray Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4340",
+        "vendorCopper": 350
+      },
+      "4342": {
+        "itemId": 4342,
+        "name": "Purple Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4342",
+        "vendorCopper": 2500
+      },
+      "4400": {
+        "itemId": 4400,
+        "name": "Heavy Stock",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4400",
+        "vendorCopper": 2000
+      },
+      "4402": {
+        "itemId": 4402,
+        "name": "Small Flame Sac",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4402"
+      },
+      "4611": {
+        "itemId": 4611,
+        "name": "Blue Pearl",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4611"
+      },
+      "4625": {
+        "itemId": 4625,
+        "name": "Firebloom",
+        "sourceUrl": "https://www.wowhead.com/forever/item=4625"
+      },
+      "5373": {
+        "itemId": 5373,
+        "name": "Lucky Charm",
+        "sourceUrl": "https://www.wowhead.com/forever/item=5373"
+      },
+      "5498": {
+        "itemId": 5498,
+        "name": "Small Lustrous Pearl",
+        "sourceUrl": "https://www.wowhead.com/forever/item=5498"
+      },
+      "5500": {
+        "itemId": 5500,
+        "name": "Iridescent Pearl",
+        "sourceUrl": "https://www.wowhead.com/forever/item=5500"
+      },
+      "5637": {
+        "itemId": 5637,
+        "name": "Large Fang",
+        "sourceUrl": "https://www.wowhead.com/forever/item=5637"
+      },
+      "6260": {
+        "itemId": 6260,
+        "name": "Blue Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=6260",
+        "vendorCopper": 50
+      },
+      "6261": {
+        "itemId": 6261,
+        "name": "Orange Dye",
+        "sourceUrl": "https://www.wowhead.com/forever/item=6261",
+        "vendorCopper": 1000
+      },
+      "6358": {
+        "itemId": 6358,
+        "name": "Oily Blackmouth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=6358"
+      },
+      "6359": {
+        "itemId": 6359,
+        "name": "Firefin Snapper",
+        "sourceUrl": "https://www.wowhead.com/forever/item=6359"
+      },
+      "7067": {
+        "itemId": 7067,
+        "name": "Elemental Earth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7067"
+      },
+      "7068": {
+        "itemId": 7068,
+        "name": "Elemental Fire",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7068"
+      },
+      "7069": {
+        "itemId": 7069,
+        "name": "Elemental Air",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7069"
+      },
+      "7076": {
+        "itemId": 7076,
+        "name": "Essence of Earth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7076"
+      },
+      "7077": {
+        "itemId": 7077,
+        "name": "Heart of Fire",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7077"
+      },
+      "7078": {
+        "itemId": 7078,
+        "name": "Essence of Fire",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7078"
+      },
+      "7079": {
+        "itemId": 7079,
+        "name": "Globe of Water",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7079"
+      },
+      "7191": {
+        "itemId": 7191,
+        "name": "Fused Wiring",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7191"
+      },
+      "7287": {
+        "itemId": 7287,
+        "name": "Red Whelp Scale",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7287"
+      },
+      "7909": {
+        "itemId": 7909,
+        "name": "Aquamarine",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7909"
+      },
+      "7910": {
+        "itemId": 7910,
+        "name": "Star Ruby",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7910"
+      },
+      "7911": {
+        "itemId": 7911,
+        "name": "Truesilver Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7911"
+      },
+      "7912": {
+        "itemId": 7912,
+        "name": "Solid Stone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7912"
+      },
+      "7971": {
+        "itemId": 7971,
+        "name": "Black Pearl",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7971"
+      },
+      "7972": {
+        "itemId": 7972,
+        "name": "Ichor of Undeath",
+        "sourceUrl": "https://www.wowhead.com/forever/item=7972"
+      },
+      "8150": {
+        "itemId": 8150,
+        "name": "Deeprock Salt",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8150"
+      },
+      "8151": {
+        "itemId": 8151,
+        "name": "Flask of Mojo",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8151"
+      },
+      "8153": {
+        "itemId": 8153,
+        "name": "Wildvine",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8153"
+      },
+      "8167": {
+        "itemId": 8167,
+        "name": "Turtle Scale",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8167"
+      },
+      "8169": {
+        "itemId": 8169,
+        "name": "Thick Hide",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8169"
+      },
+      "8171": {
+        "itemId": 8171,
+        "name": "Rugged Hide",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8171"
+      },
+      "8343": {
+        "itemId": 8343,
+        "name": "Heavy Silken Thread",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8343",
+        "vendorCopper": 2000
+      },
+      "8831": {
+        "itemId": 8831,
+        "name": "Purple Lotus",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8831"
+      },
+      "8836": {
+        "itemId": 8836,
+        "name": "Arthas' Tears",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8836"
+      },
+      "8838": {
+        "itemId": 8838,
+        "name": "Sungrass",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8838"
+      },
+      "8839": {
+        "itemId": 8839,
+        "name": "Blindweed",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8839"
+      },
+      "8845": {
+        "itemId": 8845,
+        "name": "Ghost Mushroom",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8845"
+      },
+      "8846": {
+        "itemId": 8846,
+        "name": "Gromsblood",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8846"
+      },
+      "8925": {
+        "itemId": 8925,
+        "name": "Crystal Vial",
+        "sourceUrl": "https://www.wowhead.com/forever/item=8925",
+        "vendorCopper": 2500
+      },
+      "9260": {
+        "itemId": 9260,
+        "name": "Volatile Rum",
+        "sourceUrl": "https://www.wowhead.com/forever/item=9260"
+      },
+      "10285": {
+        "itemId": 10285,
+        "name": "Shadow Silk",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10285"
+      },
+      "10286": {
+        "itemId": 10286,
+        "name": "Heart of the Wild",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10286"
+      },
+      "10620": {
+        "itemId": 10620,
+        "name": "Thorium Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10620"
+      },
+      "10939": {
+        "itemId": 10939,
+        "name": "Greater Magic Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10939"
+      },
+      "10940": {
+        "itemId": 10940,
+        "name": "Strange Dust",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10940"
+      },
+      "10978": {
+        "itemId": 10978,
+        "name": "Small Glimmering Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=10978"
+      },
+      "11040": {
+        "itemId": 11040,
+        "name": "Morrowgrain",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11040"
+      },
+      "11082": {
+        "itemId": 11082,
+        "name": "Greater Astral Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11082"
+      },
+      "11083": {
+        "itemId": 11083,
+        "name": "Soul Dust",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11083"
+      },
+      "11084": {
+        "itemId": 11084,
+        "name": "Large Glimmering Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11084"
+      },
+      "11135": {
+        "itemId": 11135,
+        "name": "Greater Mystic Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11135"
+      },
+      "11137": {
+        "itemId": 11137,
+        "name": "Vision Dust",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11137"
+      },
+      "11138": {
+        "itemId": 11138,
+        "name": "Small Glowing Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11138"
+      },
+      "11139": {
+        "itemId": 11139,
+        "name": "Large Glowing Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11139"
+      },
+      "11175": {
+        "itemId": 11175,
+        "name": "Greater Nether Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11175"
+      },
+      "11176": {
+        "itemId": 11176,
+        "name": "Dream Dust",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11176"
+      },
+      "11177": {
+        "itemId": 11177,
+        "name": "Small Radiant Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11177"
+      },
+      "11178": {
+        "itemId": 11178,
+        "name": "Large Radiant Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11178"
+      },
+      "11370": {
+        "itemId": 11370,
+        "name": "Dark Iron Ore",
+        "sourceUrl": "https://www.wowhead.com/forever/item=11370"
+      },
+      "12360": {
+        "itemId": 12360,
+        "name": "Arcanite Bar",
+        "sourceUrl": "https://www.wowhead.com/forever/item=12360"
+      },
+      "12365": {
+        "itemId": 12365,
+        "name": "Dense Stone",
+        "sourceUrl": "https://www.wowhead.com/forever/item=12365"
+      },
+      "12803": {
+        "itemId": 12803,
+        "name": "Living Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=12803"
+      },
+      "13463": {
+        "itemId": 13463,
+        "name": "Dreamfoil",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13463"
+      },
+      "13464": {
+        "itemId": 13464,
+        "name": "Golden Sansam",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13464"
+      },
+      "13465": {
+        "itemId": 13465,
+        "name": "Mountain Silversage",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13465"
+      },
+      "13466": {
+        "itemId": 13466,
+        "name": "Plaguebloom",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13466"
+      },
+      "13467": {
+        "itemId": 13467,
+        "name": "Icecap",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13467"
+      },
+      "13468": {
+        "itemId": 13468,
+        "name": "Black Lotus",
+        "sourceUrl": "https://www.wowhead.com/forever/item=13468"
+      },
+      "14047": {
+        "itemId": 14047,
+        "name": "Runecloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14047"
+      },
+      "14227": {
+        "itemId": 14227,
+        "name": "Ironweb Spider Silk",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14227"
+      },
+      "14256": {
+        "itemId": 14256,
+        "name": "Felcloth",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14256"
+      },
+      "14341": {
+        "itemId": 14341,
+        "name": "Rune Thread",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14341",
+        "vendorCopper": 5000
+      },
+      "14343": {
+        "itemId": 14343,
+        "name": "Small Brilliant Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14343"
+      },
+      "14344": {
+        "itemId": 14344,
+        "name": "Large Brilliant Shard",
+        "sourceUrl": "https://www.wowhead.com/forever/item=14344"
+      },
+      "15408": {
+        "itemId": 15408,
+        "name": "Heavy Scorpid Scale",
+        "sourceUrl": "https://www.wowhead.com/forever/item=15408"
+      },
+      "15409": {
+        "itemId": 15409,
+        "name": "Refined Deeprock Salt",
+        "sourceUrl": "https://www.wowhead.com/forever/item=15409"
+      },
+      "15422": {
+        "itemId": 15422,
+        "name": "Frostsaber Leather",
+        "sourceUrl": "https://www.wowhead.com/forever/item=15422"
+      },
+      "15423": {
+        "itemId": 15423,
+        "name": "Chimera Leather",
+        "sourceUrl": "https://www.wowhead.com/forever/item=15423"
+      },
+      "16202": {
+        "itemId": 16202,
+        "name": "Lesser Eternal Essence",
+        "sourceUrl": "https://www.wowhead.com/forever/item=16202"
+      },
+      "18240": {
+        "itemId": 18240,
+        "name": "Ogre Tannin",
+        "sourceUrl": "https://www.wowhead.com/forever/item=18240"
+      },
+      "18256": {
+        "itemId": 18256,
+        "name": "Imbued Vial",
+        "sourceUrl": "https://www.wowhead.com/forever/item=18256",
+        "vendorCopper": 30000
+      },
+      "20520": {
+        "itemId": 20520,
+        "name": "Dark Rune",
+        "sourceUrl": "https://www.wowhead.com/forever/item=20520"
+      },
+      "249399": {
+        "itemId": 249399,
+        "name": "Frilled Lichen",
+        "sourceUrl": "https://www.wowhead.com/forever/item=249399"
+      },
+      "249424": {
+        "itemId": 249424,
+        "name": "Rosecap",
+        "sourceUrl": "https://www.wowhead.com/forever/item=249424"
+      }
+    }
+  },
+  "recipes": {
+    "2317": {
+      "itemId": 2317,
+      "name": "Dark Leather Tunic",
+      "spellId": 2169,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 6,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        },
+        {
+          "itemId": 4340,
+          "qty": 1,
+          "name": "Gray Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2169"
+    },
+    "2318": {
+      "itemId": 2318,
+      "name": "Light Leather",
+      "spellId": 2881,
+      "profession": "Leatherworking",
+      "skill": 1,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2934,
+          "qty": 3,
+          "name": "Ruined Leather Scraps"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2881"
+    },
+    "2319": {
+      "itemId": 2319,
+      "name": "Medium Leather",
+      "spellId": 20648,
+      "profession": "Leatherworking",
+      "skill": 100,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2318,
+          "qty": 4,
+          "name": "Light Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=20648"
+    },
+    "2459": {
+      "itemId": 2459,
+      "name": "Swiftness Potion",
+      "spellId": 2335,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2452,
+          "qty": 1,
+          "name": "Swiftthistle"
+        },
+        {
+          "itemId": 2450,
+          "qty": 1,
+          "name": "Briarthorn"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2335"
+    },
+    "2840": {
+      "itemId": 2840,
+      "name": "Copper Bar",
+      "spellId": 2657,
+      "profession": "Mining",
+      "skill": 25,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2770,
+          "qty": 1,
+          "name": "Copper Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2657"
+    },
+    "2841": {
+      "itemId": 2841,
+      "name": "Bronze Bar",
+      "spellId": 2659,
+      "profession": "Mining",
+      "skill": 65,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 1,
+          "name": "Copper Bar"
+        },
+        {
+          "itemId": 3576,
+          "qty": 1,
+          "name": "Tin Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2659"
+    },
+    "2842": {
+      "itemId": 2842,
+      "name": "Silver Bar",
+      "spellId": 2658,
+      "profession": "Mining",
+      "skill": 75,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2775,
+          "qty": 1,
+          "name": "Silver Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2658"
+    },
+    "2865": {
+      "itemId": 2865,
+      "name": "Rough Bronze Leggings",
+      "spellId": 2668,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6,
+          "name": "Bronze Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2668"
+    },
+    "2996": {
+      "itemId": 2996,
+      "name": "Bolt of Linen Cloth",
+      "spellId": 2963,
+      "profession": "Tailoring",
+      "skill": 1,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2589,
+          "qty": 2,
+          "name": "Linen Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2963"
+    },
+    "2997": {
+      "itemId": 2997,
+      "name": "Bolt of Woolen Cloth",
+      "spellId": 2964,
+      "profession": "Tailoring",
+      "skill": 75,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2592,
+          "qty": 3,
+          "name": "Wool Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2964"
+    },
+    "3383": {
+      "itemId": 3383,
+      "name": "Elixir of Wisdom",
+      "spellId": 3171,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 1,
+          "name": "Mageroyal"
+        },
+        {
+          "itemId": 2450,
+          "qty": 2,
+          "name": "Briarthorn"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3171"
+    },
+    "3385": {
+      "itemId": 3385,
+      "name": "Lesser Mana Potion",
+      "spellId": 3173,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 1,
+          "name": "Mageroyal"
+        },
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3173"
+    },
+    "3387": {
+      "itemId": 3387,
+      "name": "Limited Invulnerability Potion",
+      "spellId": 3175,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8839,
+          "qty": 2,
+          "name": "Blindweed"
+        },
+        {
+          "itemId": 8845,
+          "qty": 1,
+          "name": "Ghost Mushroom"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3175"
+    },
+    "3388": {
+      "itemId": 3388,
+      "name": "Lesser Troll's Blood Elixir",
+      "spellId": 3176,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2453,
+          "qty": 2,
+          "name": "Bruiseweed"
+        },
+        {
+          "itemId": 2450,
+          "qty": 2,
+          "name": "Briarthorn"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3176"
+    },
+    "3390": {
+      "itemId": 3390,
+      "name": "Elixir of Lesser Agility",
+      "spellId": 2333,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1,
+          "name": "Wild Steelbloom"
+        },
+        {
+          "itemId": 2452,
+          "qty": 1,
+          "name": "Swiftthistle"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=2333"
+    },
+    "3391": {
+      "itemId": 3391,
+      "name": "Elixir of Ogre Strength",
+      "spellId": 3188,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2449,
+          "qty": 1,
+          "name": "Earthroot"
+        },
+        {
+          "itemId": 3356,
+          "qty": 1,
+          "name": "Kingsblood"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3188"
+    },
+    "3470": {
+      "itemId": 3470,
+      "name": "Rough Grinding Stone",
+      "spellId": 3320,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2835,
+          "qty": 2,
+          "name": "Rough Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3320"
+    },
+    "3478": {
+      "itemId": 3478,
+      "name": "Coarse Grinding Stone",
+      "spellId": 3326,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2836,
+          "qty": 2,
+          "name": "Coarse Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3326"
+    },
+    "3484": {
+      "itemId": 3484,
+      "name": "Green Iron Boots",
+      "spellId": 3334,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 4,
+          "name": "Iron Bar"
+        },
+        {
+          "itemId": 1705,
+          "qty": 2,
+          "name": "Lesser Moonstone"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        },
+        {
+          "itemId": 2605,
+          "qty": 1,
+          "name": "Green Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3334"
+    },
+    "3485": {
+      "itemId": 3485,
+      "name": "Green Iron Gauntlets",
+      "spellId": 3336,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 4,
+          "name": "Iron Bar"
+        },
+        {
+          "itemId": 5498,
+          "qty": 2,
+          "name": "Small Lustrous Pearl"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        },
+        {
+          "itemId": 2605,
+          "qty": 1,
+          "name": "Green Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3336"
+    },
+    "3486": {
+      "itemId": 3486,
+      "name": "Heavy Grinding Stone",
+      "spellId": 3337,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2838,
+          "qty": 3,
+          "name": "Heavy Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3337"
+    },
+    "3491": {
+      "itemId": 3491,
+      "name": "Heavy Bronze Mace",
+      "spellId": 3296,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 8,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 3466,
+          "qty": 1,
+          "name": "Strong Flux"
+        },
+        {
+          "itemId": 1206,
+          "qty": 1,
+          "name": "Moss Agate"
+        },
+        {
+          "itemId": 1210,
+          "qty": 1,
+          "name": "Shadowgem"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        },
+        {
+          "itemId": 2319,
+          "qty": 2,
+          "name": "Medium Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3296"
+    },
+    "3575": {
+      "itemId": 3575,
+      "name": "Iron Bar",
+      "spellId": 3307,
+      "profession": "Mining",
+      "skill": 125,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2772,
+          "qty": 1,
+          "name": "Iron Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3307"
+    },
+    "3576": {
+      "itemId": 3576,
+      "name": "Tin Bar",
+      "spellId": 3304,
+      "profession": "Mining",
+      "skill": 65,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2771,
+          "qty": 1,
+          "name": "Tin Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3304"
+    },
+    "3577": {
+      "itemId": 3577,
+      "name": "Gold Bar",
+      "spellId": 3308,
+      "profession": "Mining",
+      "skill": 170,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2776,
+          "qty": 1,
+          "name": "Gold Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3308"
+    },
+    "3823": {
+      "itemId": 3823,
+      "name": "Lesser Invisibility Potion",
+      "spellId": 3448,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3818,
+          "qty": 1,
+          "name": "Fadeleaf"
+        },
+        {
+          "itemId": 3355,
+          "qty": 1,
+          "name": "Wild Steelbloom"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3448"
+    },
+    "3824": {
+      "itemId": 3824,
+      "name": "Shadow Oil",
+      "spellId": 3449,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 3818,
+          "qty": 4,
+          "name": "Fadeleaf"
+        },
+        {
+          "itemId": 3369,
+          "qty": 4,
+          "name": "Grave Moss"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3449"
+    },
+    "3827": {
+      "itemId": 3827,
+      "name": "Mana Potion",
+      "spellId": 3452,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 3356,
+          "qty": 1,
+          "name": "Kingsblood"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3452"
+    },
+    "3837": {
+      "itemId": 3837,
+      "name": "Golden Scale Coif",
+      "spellId": 3503,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 8,
+          "name": "Steel Bar"
+        },
+        {
+          "itemId": 3577,
+          "qty": 2,
+          "name": "Gold Bar"
+        },
+        {
+          "itemId": 3486,
+          "qty": 2,
+          "name": "Heavy Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3503"
+    },
+    "3848": {
+      "itemId": 3848,
+      "name": "Big Bronze Knife",
+      "spellId": 3491,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 2880,
+          "qty": 4,
+          "name": "Weak Flux"
+        },
+        {
+          "itemId": 3470,
+          "qty": 2,
+          "name": "Rough Grinding Stone"
+        },
+        {
+          "itemId": 818,
+          "qty": 1,
+          "name": "Tigerseye"
+        },
+        {
+          "itemId": 2319,
+          "qty": 1,
+          "name": "Medium Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3491"
+    },
+    "3853": {
+      "itemId": 3853,
+      "name": "Moonsteel Broadsword",
+      "spellId": 3496,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 8,
+          "name": "Steel Bar"
+        },
+        {
+          "itemId": 3466,
+          "qty": 2,
+          "name": "Strong Flux"
+        },
+        {
+          "itemId": 3486,
+          "qty": 2,
+          "name": "Heavy Grinding Stone"
+        },
+        {
+          "itemId": 1705,
+          "qty": 3,
+          "name": "Lesser Moonstone"
+        },
+        {
+          "itemId": 4234,
+          "qty": 3,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3496"
+    },
+    "3859": {
+      "itemId": 3859,
+      "name": "Steel Bar",
+      "spellId": 3569,
+      "profession": "Mining",
+      "skill": 165,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1,
+          "name": "Iron Bar"
+        },
+        {
+          "itemId": 3857,
+          "qty": 1,
+          "name": "Coal"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3569"
+    },
+    "3860": {
+      "itemId": 3860,
+      "name": "Mithril Bar",
+      "spellId": 10097,
+      "profession": "Mining",
+      "skill": 175,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3858,
+          "qty": 1,
+          "name": "Mithril Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10097"
+    },
+    "4231": {
+      "itemId": 4231,
+      "name": "Cured Light Hide",
+      "spellId": 3816,
+      "profession": "Leatherworking",
+      "skill": 35,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 783,
+          "qty": 1,
+          "name": "Light Hide"
+        },
+        {
+          "itemId": 4289,
+          "qty": 1,
+          "name": "Salt"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3816"
+    },
+    "4233": {
+      "itemId": 4233,
+      "name": "Cured Medium Hide",
+      "spellId": 3817,
+      "profession": "Leatherworking",
+      "skill": 100,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4232,
+          "qty": 1,
+          "name": "Medium Hide"
+        },
+        {
+          "itemId": 4289,
+          "qty": 1,
+          "name": "Salt"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3817"
+    },
+    "4234": {
+      "itemId": 4234,
+      "name": "Heavy Leather",
+      "spellId": 20649,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 5,
+          "name": "Medium Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=20649"
+    },
+    "4236": {
+      "itemId": 4236,
+      "name": "Cured Heavy Hide",
+      "spellId": 3818,
+      "profession": "Leatherworking",
+      "skill": 150,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4235,
+          "qty": 1,
+          "name": "Heavy Hide"
+        },
+        {
+          "itemId": 4289,
+          "qty": 3,
+          "name": "Salt"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3818"
+    },
+    "4245": {
+      "itemId": 4245,
+      "name": "Small Silk Pack",
+      "spellId": 3813,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 3,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 4234,
+          "qty": 2,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 3,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3813"
+    },
+    "4252": {
+      "itemId": 4252,
+      "name": "Dark Leather Shoulders",
+      "spellId": 3769,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 12,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 3390,
+          "qty": 1,
+          "name": "Elixir of Lesser Agility"
+        },
+        {
+          "itemId": 4340,
+          "qty": 1,
+          "name": "Gray Dye"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3769"
+    },
+    "4254": {
+      "itemId": 4254,
+      "name": "Barbaric Gloves",
+      "spellId": 3771,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 6,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 5637,
+          "qty": 2,
+          "name": "Large Fang"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3771"
+    },
+    "4304": {
+      "itemId": 4304,
+      "name": "Thick Leather",
+      "spellId": 20650,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 6,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=20650"
+    },
+    "4305": {
+      "itemId": 4305,
+      "name": "Bolt of Silk Cloth",
+      "spellId": 3839,
+      "profession": "Tailoring",
+      "skill": 125,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4306,
+          "qty": 4,
+          "name": "Silk Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3839"
+    },
+    "4313": {
+      "itemId": 4313,
+      "name": "Red Woolen Boots",
+      "spellId": 3847,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2997,
+          "qty": 4,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 2318,
+          "qty": 2,
+          "name": "Light Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        },
+        {
+          "itemId": 2604,
+          "qty": 2,
+          "name": "Red Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3847"
+    },
+    "4317": {
+      "itemId": 4317,
+      "name": "Phoenix Pants",
+      "spellId": 3851,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2997,
+          "qty": 6,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 5500,
+          "qty": 1,
+          "name": "Iridescent Pearl"
+        },
+        {
+          "itemId": 2321,
+          "qty": 3,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3851"
+    },
+    "4321": {
+      "itemId": 4321,
+      "name": "Spider Silk Slippers",
+      "spellId": 3856,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 3,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 3182,
+          "qty": 1,
+          "name": "Spider's Silk"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3856"
+    },
+    "4329": {
+      "itemId": 4329,
+      "name": "Star Belt",
+      "spellId": 3864,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 4,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 3864,
+          "qty": 1,
+          "name": "Citrine"
+        },
+        {
+          "itemId": 7071,
+          "qty": 1,
+          "name": "Iron Buckle"
+        },
+        {
+          "itemId": 4291,
+          "qty": 1,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3864"
+    },
+    "4339": {
+      "itemId": 4339,
+      "name": "Bolt of Mageweave",
+      "spellId": 3865,
+      "profession": "Tailoring",
+      "skill": 175,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4338,
+          "qty": 5,
+          "name": "Mageweave Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3865"
+    },
+    "4359": {
+      "itemId": 4359,
+      "name": "Handful of Copper Bolts",
+      "spellId": 3922,
+      "profession": "Engineering",
+      "skill": 30,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 1,
+          "name": "Copper Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3922"
+    },
+    "4361": {
+      "itemId": 4361,
+      "name": "Copper Tube",
+      "spellId": 3924,
+      "profession": "Engineering",
+      "skill": 50,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 2,
+          "name": "Copper Bar"
+        },
+        {
+          "itemId": 2880,
+          "qty": 1,
+          "name": "Weak Flux"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3924"
+    },
+    "4363": {
+      "itemId": 4363,
+      "name": "Copper Modulator",
+      "spellId": 3926,
+      "profession": "Engineering",
+      "skill": 65,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4359,
+          "qty": 2,
+          "name": "Handful of Copper Bolts"
+        },
+        {
+          "itemId": 2840,
+          "qty": 1,
+          "name": "Copper Bar"
+        },
+        {
+          "itemId": 2589,
+          "qty": 2,
+          "name": "Linen Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3926"
+    },
+    "4368": {
+      "itemId": 4368,
+      "name": "Flying Tiger Goggles",
+      "spellId": 3934,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2318,
+          "qty": 6,
+          "name": "Light Leather"
+        },
+        {
+          "itemId": 818,
+          "qty": 2,
+          "name": "Tigerseye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3934"
+    },
+    "4371": {
+      "itemId": 4371,
+      "name": "Bronze Tube",
+      "spellId": 3938,
+      "profession": "Engineering",
+      "skill": 105,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 2880,
+          "qty": 1,
+          "name": "Weak Flux"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3938"
+    },
+    "4373": {
+      "itemId": 4373,
+      "name": "Shadow Goggles",
+      "spellId": 3940,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 4,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 1210,
+          "qty": 2,
+          "name": "Shadowgem"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3940"
+    },
+    "4375": {
+      "itemId": 4375,
+      "name": "Whirring Bronze Gizmo",
+      "spellId": 3942,
+      "profession": "Engineering",
+      "skill": 125,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 2592,
+          "qty": 1,
+          "name": "Wool Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3942"
+    },
+    "4377": {
+      "itemId": 4377,
+      "name": "Heavy Blasting Powder",
+      "spellId": 3945,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2838,
+          "qty": 1,
+          "name": "Heavy Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3945"
+    },
+    "4380": {
+      "itemId": 4380,
+      "name": "Big Bronze Bomb",
+      "spellId": 3950,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 4,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 2,
+          "name": "Heavy Blasting Powder"
+        },
+        {
+          "itemId": 2841,
+          "qty": 3,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 4404,
+          "qty": 1,
+          "name": "Silver Contact"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3950"
+    },
+    "4381": {
+      "itemId": 4381,
+      "name": "Minor Recombobulator",
+      "spellId": 3952,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 1,
+          "name": "Bronze Tube"
+        },
+        {
+          "itemId": 4375,
+          "qty": 2,
+          "name": "Whirring Bronze Gizmo"
+        },
+        {
+          "itemId": 2319,
+          "qty": 2,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 1206,
+          "qty": 1,
+          "name": "Moss Agate"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3952"
+    },
+    "4382": {
+      "itemId": 4382,
+      "name": "Bronze Framework",
+      "spellId": 3953,
+      "profession": "Engineering",
+      "skill": 145,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 2319,
+          "qty": 1,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 2592,
+          "qty": 1,
+          "name": "Wool Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3953"
+    },
+    "4383": {
+      "itemId": 4383,
+      "name": "Moonsight Rifle",
+      "spellId": 3954,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 3,
+          "name": "Bronze Tube"
+        },
+        {
+          "itemId": 4375,
+          "qty": 3,
+          "name": "Whirring Bronze Gizmo"
+        },
+        {
+          "itemId": 4400,
+          "qty": 1,
+          "name": "Heavy Stock"
+        },
+        {
+          "itemId": 1705,
+          "qty": 2,
+          "name": "Lesser Moonstone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3954"
+    },
+    "4384": {
+      "itemId": 4384,
+      "name": "Explosive Sheep",
+      "spellId": 3955,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4382,
+          "qty": 1,
+          "name": "Bronze Framework"
+        },
+        {
+          "itemId": 4375,
+          "qty": 1,
+          "name": "Whirring Bronze Gizmo"
+        },
+        {
+          "itemId": 4377,
+          "qty": 2,
+          "name": "Heavy Blasting Powder"
+        },
+        {
+          "itemId": 2592,
+          "qty": 2,
+          "name": "Wool Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3955"
+    },
+    "4385": {
+      "itemId": 4385,
+      "name": "Green Tinted Goggles",
+      "spellId": 3956,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 4,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 1206,
+          "qty": 2,
+          "name": "Moss Agate"
+        },
+        {
+          "itemId": 4368,
+          "qty": 1,
+          "name": "Flying Tiger Goggles"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3956"
+    },
+    "4387": {
+      "itemId": 4387,
+      "name": "Iron Strut",
+      "spellId": 3958,
+      "profession": "Engineering",
+      "skill": 160,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 2,
+          "name": "Iron Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3958"
+    },
+    "4389": {
+      "itemId": 4389,
+      "name": "Gyrochronatom",
+      "spellId": 3961,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1,
+          "name": "Iron Bar"
+        },
+        {
+          "itemId": 10558,
+          "qty": 1,
+          "name": "Gold Power Core"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3961"
+    },
+    "4392": {
+      "itemId": 4392,
+      "name": "Advanced Target Dummy",
+      "spellId": 3965,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4387,
+          "qty": 1,
+          "name": "Iron Strut"
+        },
+        {
+          "itemId": 4382,
+          "qty": 1,
+          "name": "Bronze Framework"
+        },
+        {
+          "itemId": 4389,
+          "qty": 1,
+          "name": "Gyrochronatom"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3965"
+    },
+    "4393": {
+      "itemId": 4393,
+      "name": "Craftsman's Monocle",
+      "spellId": 3966,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 6,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 3864,
+          "qty": 2,
+          "name": "Citrine"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3966"
+    },
+    "4395": {
+      "itemId": 4395,
+      "name": "Goblin Land Mine",
+      "spellId": 3968,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 3,
+          "name": "Heavy Blasting Powder"
+        },
+        {
+          "itemId": 3575,
+          "qty": 2,
+          "name": "Iron Bar"
+        },
+        {
+          "itemId": 4389,
+          "qty": 1,
+          "name": "Gyrochronatom"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3968"
+    },
+    "4396": {
+      "itemId": 4396,
+      "name": "Mechanical Dragonling",
+      "spellId": 3969,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4382,
+          "qty": 1,
+          "name": "Bronze Framework"
+        },
+        {
+          "itemId": 4387,
+          "qty": 4,
+          "name": "Iron Strut"
+        },
+        {
+          "itemId": 4389,
+          "qty": 4,
+          "name": "Gyrochronatom"
+        },
+        {
+          "itemId": 3864,
+          "qty": 2,
+          "name": "Citrine"
+        },
+        {
+          "itemId": 7191,
+          "qty": 1,
+          "name": "Fused Wiring"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3969"
+    },
+    "4404": {
+      "itemId": 4404,
+      "name": "Silver Contact",
+      "spellId": 3973,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 5,
+      "outputMax": 5,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 1,
+          "name": "Silver Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3973"
+    },
+    "4623": {
+      "itemId": 4623,
+      "name": "Lesser Stoneshield Potion",
+      "spellId": 4942,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3858,
+          "qty": 1,
+          "name": "Mithril Ore"
+        },
+        {
+          "itemId": 3821,
+          "qty": 1,
+          "name": "Goldthorn"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=4942"
+    },
+    "4852": {
+      "itemId": 4852,
+      "name": "Flash Bomb",
+      "spellId": 8243,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4611,
+          "qty": 1,
+          "name": "Blue Pearl"
+        },
+        {
+          "itemId": 4377,
+          "qty": 1,
+          "name": "Heavy Blasting Powder"
+        },
+        {
+          "itemId": 4306,
+          "qty": 1,
+          "name": "Silk Cloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8243"
+    },
+    "5507": {
+      "itemId": 5507,
+      "name": "Ornate Spyglass",
+      "spellId": 6458,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 2,
+          "name": "Bronze Tube"
+        },
+        {
+          "itemId": 4375,
+          "qty": 2,
+          "name": "Whirring Bronze Gizmo"
+        },
+        {
+          "itemId": 4363,
+          "qty": 1,
+          "name": "Copper Modulator"
+        },
+        {
+          "itemId": 1206,
+          "qty": 1,
+          "name": "Moss Agate"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6458"
+    },
+    "5540": {
+      "itemId": 5540,
+      "name": "Pearl-handled Dagger",
+      "spellId": 6517,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 3466,
+          "qty": 1,
+          "name": "Strong Flux"
+        },
+        {
+          "itemId": 5498,
+          "qty": 2,
+          "name": "Small Lustrous Pearl"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6517"
+    },
+    "5541": {
+      "itemId": 5541,
+      "name": "Iridescent Hammer",
+      "spellId": 6518,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 10,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 3466,
+          "qty": 1,
+          "name": "Strong Flux"
+        },
+        {
+          "itemId": 5500,
+          "qty": 1,
+          "name": "Iridescent Pearl"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        },
+        {
+          "itemId": 2319,
+          "qty": 2,
+          "name": "Medium Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6518"
+    },
+    "5633": {
+      "itemId": 5633,
+      "name": "Great Rage Potion",
+      "spellId": 6618,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 5637,
+          "qty": 1,
+          "name": "Large Fang"
+        },
+        {
+          "itemId": 3356,
+          "qty": 1,
+          "name": "Kingsblood"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6618"
+    },
+    "5634": {
+      "itemId": 5634,
+      "name": "Free Action Potion",
+      "spellId": 6624,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 6370,
+          "qty": 2,
+          "name": "Blackmouth Oil"
+        },
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6624"
+    },
+    "5766": {
+      "itemId": 5766,
+      "name": "Lesser Wizard's Robe",
+      "spellId": 6690,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 2,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        },
+        {
+          "itemId": 3182,
+          "qty": 2,
+          "name": "Spider's Silk"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=6690"
+    },
+    "5958": {
+      "itemId": 5958,
+      "name": "Fine Leather Pants",
+      "spellId": 7133,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 8,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 2997,
+          "qty": 1,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7133"
+    },
+    "5965": {
+      "itemId": 5965,
+      "name": "Guardian Cloak",
+      "spellId": 7153,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 14,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 4305,
+          "qty": 2,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 4291,
+          "qty": 2,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7153"
+    },
+    "5996": {
+      "itemId": 5996,
+      "name": "Draught of Water Breathing",
+      "spellId": 7179,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 6370,
+          "qty": 2,
+          "name": "Blackmouth Oil"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7179"
+    },
+    "6037": {
+      "itemId": 6037,
+      "name": "Truesilver Bar",
+      "spellId": 10098,
+      "profession": "Mining",
+      "skill": 230,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7911,
+          "qty": 1,
+          "name": "Truesilver Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10098"
+    },
+    "6041": {
+      "itemId": 6041,
+      "name": "Steel Weapon Chain",
+      "spellId": 7224,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 8,
+          "name": "Steel Bar"
+        },
+        {
+          "itemId": 3486,
+          "qty": 2,
+          "name": "Heavy Grinding Stone"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7224"
+    },
+    "6048": {
+      "itemId": 6048,
+      "name": "Shadow Protection Potion",
+      "spellId": 7256,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3369,
+          "qty": 1,
+          "name": "Grave Moss"
+        },
+        {
+          "itemId": 3356,
+          "qty": 1,
+          "name": "Kingsblood"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7256"
+    },
+    "6049": {
+      "itemId": 6049,
+      "name": "Fire Protection Potion",
+      "spellId": 7257,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4402,
+          "qty": 1,
+          "name": "Small Flame Sac"
+        },
+        {
+          "itemId": 6371,
+          "qty": 1,
+          "name": "Fire Oil"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7257"
+    },
+    "6050": {
+      "itemId": 6050,
+      "name": "Frost Protection Potion",
+      "spellId": 7258,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3819,
+          "qty": 1,
+          "name": "Wintersbite"
+        },
+        {
+          "itemId": 3821,
+          "qty": 1,
+          "name": "Goldthorn"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7258"
+    },
+    "6052": {
+      "itemId": 6052,
+      "name": "Nature Protection Potion",
+      "spellId": 7259,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3357,
+          "qty": 1,
+          "name": "Liferoot"
+        },
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7259"
+    },
+    "6263": {
+      "itemId": 6263,
+      "name": "Blue Overalls",
+      "spellId": 7639,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2997,
+          "qty": 4,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        },
+        {
+          "itemId": 6260,
+          "qty": 2,
+          "name": "Blue Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7639"
+    },
+    "6264": {
+      "itemId": 6264,
+      "name": "Greater Adept's Robe",
+      "spellId": 7643,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2997,
+          "qty": 5,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 2321,
+          "qty": 3,
+          "name": "Fine Thread"
+        },
+        {
+          "itemId": 2604,
+          "qty": 3,
+          "name": "Red Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7643"
+    },
+    "6370": {
+      "itemId": 6370,
+      "name": "Blackmouth Oil",
+      "spellId": 7836,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 6358,
+          "qty": 2,
+          "name": "Oily Blackmouth"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7836"
+    },
+    "6371": {
+      "itemId": 6371,
+      "name": "Fire Oil",
+      "spellId": 7837,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 6359,
+          "qty": 2,
+          "name": "Firefin Snapper"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=7837"
+    },
+    "6712": {
+      "itemId": 6712,
+      "name": "Practice Lock",
+      "spellId": 8334,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 1,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 4359,
+          "qty": 2,
+          "name": "Handful of Copper Bolts"
+        },
+        {
+          "itemId": 2880,
+          "qty": 1,
+          "name": "Weak Flux"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8334"
+    },
+    "7048": {
+      "itemId": 7048,
+      "name": "Azure Silk Hood",
+      "spellId": 8760,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 2,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 6260,
+          "qty": 2,
+          "name": "Blue Dye"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8760"
+    },
+    "7061": {
+      "itemId": 7061,
+      "name": "Earthen Silk Belt",
+      "spellId": 8797,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 5,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 7067,
+          "qty": 4,
+          "name": "Elemental Earth"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 7071,
+          "qty": 1,
+          "name": "Iron Buckle"
+        },
+        {
+          "itemId": 4291,
+          "qty": 2,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8797"
+    },
+    "7063": {
+      "itemId": 7063,
+      "name": "Crimson Silk Robe",
+      "spellId": 8802,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4305,
+          "qty": 8,
+          "name": "Bolt of Silk Cloth"
+        },
+        {
+          "itemId": 7068,
+          "qty": 4,
+          "name": "Elemental Fire"
+        },
+        {
+          "itemId": 3827,
+          "qty": 2,
+          "name": "Mana Potion"
+        },
+        {
+          "itemId": 2604,
+          "qty": 4,
+          "name": "Red Dye"
+        },
+        {
+          "itemId": 4291,
+          "qty": 1,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8802"
+    },
+    "7071": {
+      "itemId": 7071,
+      "name": "Iron Buckle",
+      "spellId": 8768,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1,
+          "name": "Iron Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=8768"
+    },
+    "7284": {
+      "itemId": 7284,
+      "name": "Red Whelp Gloves",
+      "spellId": 9072,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7287,
+          "qty": 6,
+          "name": "Red Whelp Scale"
+        },
+        {
+          "itemId": 2319,
+          "qty": 4,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9072"
+    },
+    "7349": {
+      "itemId": 7349,
+      "name": "Herbalist's Gloves",
+      "spellId": 9146,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 8,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 3356,
+          "qty": 4,
+          "name": "Kingsblood"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9146"
+    },
+    "7358": {
+      "itemId": 7358,
+      "name": "Pilferer's Gloves",
+      "spellId": 9148,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 10,
+          "name": "Medium Leather"
+        },
+        {
+          "itemId": 5373,
+          "qty": 2,
+          "name": "Lucky Charm"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9148"
+    },
+    "7371": {
+      "itemId": 7371,
+      "name": "Heavy Quiver",
+      "spellId": 9193,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 8,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 2,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9193"
+    },
+    "7378": {
+      "itemId": 7378,
+      "name": "Dusky Bracers",
+      "spellId": 9201,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 16,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 2325,
+          "qty": 1,
+          "name": "Black Dye"
+        },
+        {
+          "itemId": 4291,
+          "qty": 2,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9201"
+    },
+    "7391": {
+      "itemId": 7391,
+      "name": "Swift Boots",
+      "spellId": 9208,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 10,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 2459,
+          "qty": 2,
+          "name": "Swiftness Potion"
+        },
+        {
+          "itemId": 4337,
+          "qty": 2,
+          "name": "Thick Spider's Silk"
+        },
+        {
+          "itemId": 4291,
+          "qty": 1,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9208"
+    },
+    "7506": {
+      "itemId": 7506,
+      "name": "Gnomish Universal Remote",
+      "spellId": 9269,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6,
+          "name": "Bronze Bar"
+        },
+        {
+          "itemId": 4375,
+          "qty": 1,
+          "name": "Whirring Bronze Gizmo"
+        },
+        {
+          "itemId": 814,
+          "qty": 2,
+          "name": "Flask of Oil"
+        },
+        {
+          "itemId": 818,
+          "qty": 1,
+          "name": "Tigerseye"
+        },
+        {
+          "itemId": 774,
+          "qty": 1,
+          "name": "Malachite"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9269"
+    },
+    "7922": {
+      "itemId": 7922,
+      "name": "Steel Plate Helm",
+      "spellId": 9935,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 14,
+          "name": "Steel Bar"
+        },
+        {
+          "itemId": 7966,
+          "qty": 1,
+          "name": "Solid Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9935"
+    },
+    "7928": {
+      "itemId": 7928,
+      "name": "Ornate Mithril Shoulders",
+      "spellId": 9952,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 12,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 6037,
+          "qty": 1,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 4304,
+          "qty": 6,
+          "name": "Thick Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9952"
+    },
+    "7929": {
+      "itemId": 7929,
+      "name": "Orcish War Leggings",
+      "spellId": 9957,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 12,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 7067,
+          "qty": 1,
+          "name": "Elemental Earth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9957",
+      "caveat": "The Orcish War Leggings plans are Horde-only. Alliance crafters should verify access before relying on this estimate."
+    },
+    "7941": {
+      "itemId": 7941,
+      "name": "Heavy Mithril Axe",
+      "spellId": 9993,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 12,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 3864,
+          "qty": 2,
+          "name": "Citrine"
+        },
+        {
+          "itemId": 7966,
+          "qty": 1,
+          "name": "Solid Grinding Stone"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9993"
+    },
+    "7942": {
+      "itemId": 7942,
+      "name": "Blue Glittering Axe",
+      "spellId": 9995,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 16,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 7909,
+          "qty": 2,
+          "name": "Aquamarine"
+        },
+        {
+          "itemId": 7966,
+          "qty": 1,
+          "name": "Solid Grinding Stone"
+        },
+        {
+          "itemId": 4304,
+          "qty": 4,
+          "name": "Thick Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9995"
+    },
+    "7943": {
+      "itemId": 7943,
+      "name": "Wicked Mithril Blade",
+      "spellId": 9997,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 14,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 6037,
+          "qty": 4,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 7966,
+          "qty": 1,
+          "name": "Solid Grinding Stone"
+        },
+        {
+          "itemId": 4304,
+          "qty": 2,
+          "name": "Thick Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9997"
+    },
+    "7947": {
+      "itemId": 7947,
+      "name": "Ebon Shiv",
+      "spellId": 10013,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 12,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 6037,
+          "qty": 6,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 7910,
+          "qty": 2,
+          "name": "Star Ruby"
+        },
+        {
+          "itemId": 7966,
+          "qty": 1,
+          "name": "Solid Grinding Stone"
+        },
+        {
+          "itemId": 4304,
+          "qty": 2,
+          "name": "Thick Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10013"
+    },
+    "7964": {
+      "itemId": 7964,
+      "name": "Solid Sharpening Stone",
+      "spellId": 9918,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7912,
+          "qty": 1,
+          "name": "Solid Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9918"
+    },
+    "7966": {
+      "itemId": 7966,
+      "name": "Solid Grinding Stone",
+      "spellId": 9920,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7912,
+          "qty": 4,
+          "name": "Solid Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9920"
+    },
+    "7969": {
+      "itemId": 7969,
+      "name": "Mithril Spurs",
+      "spellId": 9964,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 4,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 7966,
+          "qty": 3,
+          "name": "Solid Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=9964"
+    },
+    "8069": {
+      "itemId": 8069,
+      "name": "Crafted Solid Shot",
+      "spellId": 3947,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 200,
+      "outputMax": 200,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1,
+          "name": "Heavy Blasting Powder"
+        },
+        {
+          "itemId": 2841,
+          "qty": 1,
+          "name": "Bronze Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=3947"
+    },
+    "8170": {
+      "itemId": 8170,
+      "name": "Rugged Leather",
+      "spellId": 22331,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 6,
+          "name": "Thick Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=22331"
+    },
+    "8172": {
+      "itemId": 8172,
+      "name": "Cured Thick Hide",
+      "spellId": 10482,
+      "profession": "Leatherworking",
+      "skill": 200,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8169,
+          "qty": 1,
+          "name": "Thick Hide"
+        },
+        {
+          "itemId": 8150,
+          "qty": 1,
+          "name": "Deeprock Salt"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10482"
+    },
+    "8174": {
+      "itemId": 8174,
+      "name": "Comfortable Leather Hat",
+      "spellId": 10490,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 12,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 4236,
+          "qty": 2,
+          "name": "Cured Heavy Hide"
+        },
+        {
+          "itemId": 4291,
+          "qty": 2,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10490"
+    },
+    "8189": {
+      "itemId": 8189,
+      "name": "Turtle Scale Breastplate",
+      "spellId": 10511,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 6,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8167,
+          "qty": 12,
+          "name": "Turtle Scale"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10511"
+    },
+    "8192": {
+      "itemId": 8192,
+      "name": "Nightscape Shoulders",
+      "spellId": 10516,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 8,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 4338,
+          "qty": 6,
+          "name": "Mageweave Cloth"
+        },
+        {
+          "itemId": 4291,
+          "qty": 3,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10516"
+    },
+    "8200": {
+      "itemId": 8200,
+      "name": "Big Voodoo Robe",
+      "spellId": 10520,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 10,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8151,
+          "qty": 4,
+          "name": "Flask of Mojo"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10520"
+    },
+    "8201": {
+      "itemId": 8201,
+      "name": "Big Voodoo Mask",
+      "spellId": 10531,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 8,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8151,
+          "qty": 6,
+          "name": "Flask of Mojo"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10531"
+    },
+    "8210": {
+      "itemId": 8210,
+      "name": "Wild Leather Shoulders",
+      "spellId": 10529,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 10,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8153,
+          "qty": 1,
+          "name": "Wildvine"
+        },
+        {
+          "itemId": 8172,
+          "qty": 1,
+          "name": "Cured Thick Hide"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10529"
+    },
+    "8214": {
+      "itemId": 8214,
+      "name": "Wild Leather Helmet",
+      "spellId": 10546,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 10,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8153,
+          "qty": 2,
+          "name": "Wildvine"
+        },
+        {
+          "itemId": 8172,
+          "qty": 1,
+          "name": "Cured Thick Hide"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=10546"
+    },
+    "8217": {
+      "itemId": 8217,
+      "name": "Quickdraw Quiver",
+      "spellId": 14930,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 12,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8172,
+          "qty": 1,
+          "name": "Cured Thick Hide"
+        },
+        {
+          "itemId": 8949,
+          "qty": 1,
+          "name": "Elixir of Agility"
+        },
+        {
+          "itemId": 4291,
+          "qty": 4,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=14930"
+    },
+    "8218": {
+      "itemId": 8218,
+      "name": "Thick Leather Ammo Pouch",
+      "spellId": 14932,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 10,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 8172,
+          "qty": 1,
+          "name": "Cured Thick Hide"
+        },
+        {
+          "itemId": 8951,
+          "qty": 1,
+          "name": "Elixir of Defense"
+        },
+        {
+          "itemId": 4291,
+          "qty": 6,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=14932"
+    },
+    "8949": {
+      "itemId": 8949,
+      "name": "Elixir of Agility",
+      "spellId": 11449,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1,
+          "name": "Stranglekelp"
+        },
+        {
+          "itemId": 3821,
+          "qty": 1,
+          "name": "Goldthorn"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11449"
+    },
+    "8951": {
+      "itemId": 8951,
+      "name": "Elixir of Defense",
+      "spellId": 11450,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1,
+          "name": "Wild Steelbloom"
+        },
+        {
+          "itemId": 3821,
+          "qty": 1,
+          "name": "Goldthorn"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11450"
+    },
+    "9060": {
+      "itemId": 9060,
+      "name": "Inlaid Mithril Cylinder",
+      "spellId": 11454,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 5,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 3577,
+          "qty": 1,
+          "name": "Gold Bar"
+        },
+        {
+          "itemId": 6037,
+          "qty": 1,
+          "name": "Truesilver Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11454"
+    },
+    "9061": {
+      "itemId": 9061,
+      "name": "Goblin Rocket Fuel",
+      "spellId": 11456,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 4625,
+          "qty": 1,
+          "name": "Firebloom"
+        },
+        {
+          "itemId": 9260,
+          "qty": 1,
+          "name": "Volatile Rum"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11456"
+    },
+    "9088": {
+      "itemId": 9088,
+      "name": "Gift of Arthas",
+      "spellId": 11466,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8836,
+          "qty": 1,
+          "name": "Arthas' Tears"
+        },
+        {
+          "itemId": 8839,
+          "qty": 1,
+          "name": "Blindweed"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11466"
+    },
+    "9144": {
+      "itemId": 9144,
+      "name": "Wildvine Potion",
+      "spellId": 11458,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8153,
+          "qty": 1,
+          "name": "Wildvine"
+        },
+        {
+          "itemId": 8831,
+          "qty": 1,
+          "name": "Purple Lotus"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11458"
+    },
+    "9210": {
+      "itemId": 9210,
+      "name": "Ghost Dye",
+      "spellId": 11473,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 8845,
+          "qty": 2,
+          "name": "Ghost Mushroom"
+        },
+        {
+          "itemId": 4342,
+          "qty": 1,
+          "name": "Purple Dye"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11473"
+    },
+    "9224": {
+      "itemId": 9224,
+      "name": "Potion of Demon Slaying",
+      "spellId": 11477,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 1,
+          "name": "Gromsblood"
+        },
+        {
+          "itemId": 8845,
+          "qty": 1,
+          "name": "Ghost Mushroom"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11477"
+    },
+    "9233": {
+      "itemId": 9233,
+      "name": "Draught of Detect Demon",
+      "spellId": 11478,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 2,
+          "name": "Gromsblood"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11478"
+    },
+    "9366": {
+      "itemId": 9366,
+      "name": "Golden Scale Gauntlets",
+      "spellId": 11643,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 10,
+          "name": "Steel Bar"
+        },
+        {
+          "itemId": 3577,
+          "qty": 4,
+          "name": "Gold Bar"
+        },
+        {
+          "itemId": 3486,
+          "qty": 4,
+          "name": "Heavy Grinding Stone"
+        },
+        {
+          "itemId": 3864,
+          "qty": 1,
+          "name": "Citrine"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=11643"
+    },
+    "9998": {
+      "itemId": 9998,
+      "name": "Black Mageweave Vest",
+      "spellId": 12048,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 2,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 4291,
+          "qty": 3,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12048"
+    },
+    "10004": {
+      "itemId": 10004,
+      "name": "Shadoweave Robe",
+      "spellId": 12055,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 3,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 10285,
+          "qty": 2,
+          "name": "Shadow Silk"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12055"
+    },
+    "10008": {
+      "itemId": 10008,
+      "name": "White Bandit Mask",
+      "spellId": 12059,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 1,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 2324,
+          "qty": 1,
+          "name": "Bleach"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12059"
+    },
+    "10009": {
+      "itemId": 10009,
+      "name": "Red Mageweave Pants",
+      "spellId": 12060,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 3,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 2604,
+          "qty": 2,
+          "name": "Red Dye"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12060"
+    },
+    "10023": {
+      "itemId": 10023,
+      "name": "Shadoweave Gloves",
+      "spellId": 12071,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 5,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 10285,
+          "qty": 5,
+          "name": "Shadow Silk"
+        },
+        {
+          "itemId": 8343,
+          "qty": 2,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12071"
+    },
+    "10025": {
+      "itemId": 10025,
+      "name": "Shadoweave Mask",
+      "spellId": 12086,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 2,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 10285,
+          "qty": 8,
+          "name": "Shadow Silk"
+        },
+        {
+          "itemId": 8343,
+          "qty": 2,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12086"
+    },
+    "10036": {
+      "itemId": 10036,
+      "name": "Tuxedo Jacket",
+      "spellId": 12093,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 5,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 8343,
+          "qty": 3,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12093"
+    },
+    "10042": {
+      "itemId": 10042,
+      "name": "Cindercloth Robe",
+      "spellId": 12069,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 5,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 7077,
+          "qty": 2,
+          "name": "Heart of Fire"
+        },
+        {
+          "itemId": 8343,
+          "qty": 2,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12069"
+    },
+    "10048": {
+      "itemId": 10048,
+      "name": "Colorful Kilt",
+      "spellId": 12047,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 2997,
+          "qty": 5,
+          "name": "Bolt of Woolen Cloth"
+        },
+        {
+          "itemId": 2604,
+          "qty": 3,
+          "name": "Red Dye"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12047"
+    },
+    "10050": {
+      "itemId": 10050,
+      "name": "Mageweave Bag",
+      "spellId": 12065,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 4,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 4291,
+          "qty": 2,
+          "name": "Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12065"
+    },
+    "10052": {
+      "itemId": 10052,
+      "name": "Orange Martial Shirt",
+      "spellId": 12064,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 2,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 6261,
+          "qty": 2,
+          "name": "Orange Dye"
+        },
+        {
+          "itemId": 8343,
+          "qty": 1,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12064"
+    },
+    "10498": {
+      "itemId": 10498,
+      "name": "Gyromatic Micro-Adjustor",
+      "spellId": 12590,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 4,
+          "name": "Steel Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12590"
+    },
+    "10500": {
+      "itemId": 10500,
+      "name": "Fire Goggles",
+      "spellId": 12594,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4385,
+          "qty": 1,
+          "name": "Green Tinted Goggles"
+        },
+        {
+          "itemId": 3864,
+          "qty": 2,
+          "name": "Citrine"
+        },
+        {
+          "itemId": 7068,
+          "qty": 2,
+          "name": "Elemental Fire"
+        },
+        {
+          "itemId": 4234,
+          "qty": 4,
+          "name": "Heavy Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12594"
+    },
+    "10501": {
+      "itemId": 10501,
+      "name": "Catseye Ultra Goggles",
+      "spellId": 12607,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 4,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 7909,
+          "qty": 2,
+          "name": "Aquamarine"
+        },
+        {
+          "itemId": 10592,
+          "qty": 1,
+          "name": "Catseye Draught"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12607"
+    },
+    "10504": {
+      "itemId": 10504,
+      "name": "Green Lens",
+      "spellId": 12622,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 8,
+          "name": "Thick Leather"
+        },
+        {
+          "itemId": 1529,
+          "qty": 3,
+          "name": "Jade"
+        },
+        {
+          "itemId": 7909,
+          "qty": 3,
+          "name": "Aquamarine"
+        },
+        {
+          "itemId": 10286,
+          "qty": 2,
+          "name": "Heart of the Wild"
+        },
+        {
+          "itemId": 8153,
+          "qty": 2,
+          "name": "Wildvine"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12622"
+    },
+    "10505": {
+      "itemId": 10505,
+      "name": "Solid Blasting Powder",
+      "spellId": 12585,
+      "profession": "Engineering",
+      "skill": 175,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7912,
+          "qty": 2,
+          "name": "Solid Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12585"
+    },
+    "10514": {
+      "itemId": 10514,
+      "name": "Mithril Frag Bomb",
+      "spellId": 12603,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 3,
+      "outputMax": 3,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1,
+          "name": "Mithril Casing"
+        },
+        {
+          "itemId": 10560,
+          "qty": 1,
+          "name": "Unstable Trigger"
+        },
+        {
+          "itemId": 10505,
+          "qty": 1,
+          "name": "Solid Blasting Powder"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12603"
+    },
+    "10548": {
+      "itemId": 10548,
+      "name": "Sniper Scope",
+      "spellId": 12620,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1,
+          "name": "Mithril Tube"
+        },
+        {
+          "itemId": 7910,
+          "qty": 1,
+          "name": "Star Ruby"
+        },
+        {
+          "itemId": 6037,
+          "qty": 2,
+          "name": "Truesilver Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12620"
+    },
+    "10558": {
+      "itemId": 10558,
+      "name": "Gold Power Core",
+      "spellId": 12584,
+      "profession": "Engineering",
+      "skill": 150,
+      "outputMin": 3,
+      "outputMax": 3,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 1,
+          "name": "Gold Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12584"
+    },
+    "10559": {
+      "itemId": 10559,
+      "name": "Mithril Tube",
+      "spellId": 12589,
+      "profession": "Engineering",
+      "skill": 195,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 3,
+          "name": "Mithril Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12589"
+    },
+    "10560": {
+      "itemId": 10560,
+      "name": "Unstable Trigger",
+      "spellId": 12591,
+      "profession": "Engineering",
+      "skill": 200,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 4338,
+          "qty": 1,
+          "name": "Mageweave Cloth"
+        },
+        {
+          "itemId": 10505,
+          "qty": 1,
+          "name": "Solid Blasting Powder"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12591"
+    },
+    "10561": {
+      "itemId": 10561,
+      "name": "Mithril Casing",
+      "spellId": 12599,
+      "profession": "Engineering",
+      "skill": 215,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 3,
+          "name": "Mithril Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12599"
+    },
+    "10592": {
+      "itemId": 10592,
+      "name": "Catseye Draught",
+      "spellId": 12609,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3821,
+          "qty": 1,
+          "name": "Goldthorn"
+        },
+        {
+          "itemId": 3818,
+          "qty": 1,
+          "name": "Fadeleaf"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=12609"
+    },
+    "11128": {
+      "itemId": 11128,
+      "name": "Golden Rod",
+      "spellId": 14379,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 1,
+          "name": "Gold Bar"
+        },
+        {
+          "itemId": 3478,
+          "qty": 2,
+          "name": "Coarse Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=14379"
+    },
+    "11144": {
+      "itemId": 11144,
+      "name": "Truesilver Rod",
+      "spellId": 14380,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 1,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 3486,
+          "qty": 1,
+          "name": "Heavy Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=14380"
+    },
+    "11371": {
+      "itemId": 11371,
+      "name": "Dark Iron Bar",
+      "spellId": 14891,
+      "profession": "Mining",
+      "skill": 230,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 11370,
+          "qty": 8,
+          "name": "Dark Iron Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=14891",
+      "caveat": "Smelt Dark Iron requires the Black Forge in Blackrock Depths and learning the spell from The Spectral Chalice."
+    },
+    "11590": {
+      "itemId": 11590,
+      "name": "Mechanical Repair Kit",
+      "spellId": 15255,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1,
+          "name": "Mithril Bar"
+        },
+        {
+          "itemId": 4338,
+          "qty": 1,
+          "name": "Mageweave Cloth"
+        },
+        {
+          "itemId": 10505,
+          "qty": 1,
+          "name": "Solid Blasting Powder"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=15255"
+    },
+    "12190": {
+      "itemId": 12190,
+      "name": "Dreamless Sleep Potion",
+      "spellId": 15833,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8831,
+          "qty": 3,
+          "name": "Purple Lotus"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=15833"
+    },
+    "12359": {
+      "itemId": 12359,
+      "name": "Thorium Bar",
+      "spellId": 16153,
+      "profession": "Mining",
+      "skill": 250,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 10620,
+          "qty": 1,
+          "name": "Thorium Ore"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16153"
+    },
+    "12416": {
+      "itemId": 12416,
+      "name": "Radiant Belt",
+      "spellId": 16645,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 10,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 7077,
+          "qty": 2,
+          "name": "Heart of Fire"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16645"
+    },
+    "12417": {
+      "itemId": 12417,
+      "name": "Radiant Circlet",
+      "spellId": 16659,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 18,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 7077,
+          "qty": 4,
+          "name": "Heart of Fire"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16659"
+    },
+    "12422": {
+      "itemId": 12422,
+      "name": "Imperial Plate Chest",
+      "spellId": 16663,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 40,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 7910,
+          "qty": 2,
+          "name": "Star Ruby"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16663"
+    },
+    "12644": {
+      "itemId": 12644,
+      "name": "Dense Grinding Stone",
+      "spellId": 16639,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12365,
+          "qty": 4,
+          "name": "Dense Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16639"
+    },
+    "12775": {
+      "itemId": 12775,
+      "name": "Huge Thorium Battleaxe",
+      "spellId": 16971,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 40,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 12644,
+          "qty": 6,
+          "name": "Dense Grinding Stone"
+        },
+        {
+          "itemId": 8170,
+          "qty": 6,
+          "name": "Rugged Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=16971"
+    },
+    "12810": {
+      "itemId": 12810,
+      "name": "Enchanted Leather",
+      "spellId": 17181,
+      "profession": "Enchanting",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 1,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 16202,
+          "qty": 1,
+          "name": "Lesser Eternal Essence"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=17181"
+    },
+    "13457": {
+      "itemId": 13457,
+      "name": "Greater Fire Protection Potion",
+      "spellId": 17574,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 7068,
+          "qty": 1,
+          "name": "Elemental Fire"
+        },
+        {
+          "itemId": 13463,
+          "qty": 1,
+          "name": "Dreamfoil"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=17574"
+    },
+    "13513": {
+      "itemId": 13513,
+      "name": "Flask of Chromatic Resistance",
+      "spellId": 17638,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 13467,
+          "qty": 30,
+          "name": "Icecap"
+        },
+        {
+          "itemId": 13465,
+          "qty": 10,
+          "name": "Mountain Silversage"
+        },
+        {
+          "itemId": 13468,
+          "qty": 1,
+          "name": "Black Lotus"
+        },
+        {
+          "itemId": 8925,
+          "qty": 1,
+          "name": "Crystal Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=17638"
+    },
+    "13864": {
+      "itemId": 13864,
+      "name": "Runecloth Boots",
+      "spellId": 18423,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 4,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 14227,
+          "qty": 2,
+          "name": "Ironweb Spider Silk"
+        },
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18423"
+    },
+    "14046": {
+      "itemId": 14046,
+      "name": "Runecloth Bag",
+      "spellId": 18405,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 5,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 8170,
+          "qty": 2,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        },
+        {
+          "itemId": 249430,
+          "qty": 4,
+          "name": "Magenta Dye"
+        },
+        {
+          "itemId": 249409,
+          "qty": 2,
+          "name": "Cerulean Dye"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18405"
+    },
+    "14048": {
+      "itemId": 14048,
+      "name": "Bolt of Runecloth",
+      "spellId": 18401,
+      "profession": "Tailoring",
+      "skill": 250,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14047,
+          "qty": 5,
+          "name": "Runecloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18401"
+    },
+    "14108": {
+      "itemId": 14108,
+      "name": "Felcloth Boots",
+      "spellId": 18437,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 6,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 14256,
+          "qty": 4,
+          "name": "Felcloth"
+        },
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18437"
+    },
+    "14130": {
+      "itemId": 14130,
+      "name": "Wizardweave Turban",
+      "spellId": 18450,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 6,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 11176,
+          "qty": 4,
+          "name": "Dream Dust"
+        },
+        {
+          "itemId": 7910,
+          "qty": 1,
+          "name": "Star Ruby"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18450"
+    },
+    "14141": {
+      "itemId": 14141,
+      "name": "Ghostweave Vest",
+      "spellId": 18416,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 6,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 9210,
+          "qty": 4,
+          "name": "Ghost Dye"
+        },
+        {
+          "itemId": 14227,
+          "qty": 1,
+          "name": "Ironweb Spider Silk"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=18416"
+    },
+    "15053": {
+      "itemId": 15053,
+      "name": "Volcanic Breastplate",
+      "spellId": 19076,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 8,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 7078,
+          "qty": 1,
+          "name": "Essence of Fire"
+        },
+        {
+          "itemId": 7076,
+          "qty": 1,
+          "name": "Essence of Earth"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19076"
+    },
+    "15071": {
+      "itemId": 15071,
+      "name": "Frostsaber Boots",
+      "spellId": 19066,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 15422,
+          "qty": 6,
+          "name": "Frostsaber Leather"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19066"
+    },
+    "15075": {
+      "itemId": 15075,
+      "name": "Chimeric Vest",
+      "spellId": 19081,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 10,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 15423,
+          "qty": 10,
+          "name": "Chimera Leather"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19081"
+    },
+    "15080": {
+      "itemId": 15080,
+      "name": "Heavy Scorpid Helm",
+      "spellId": 19088,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 8,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 15408,
+          "qty": 12,
+          "name": "Heavy Scorpid Scale"
+        },
+        {
+          "itemId": 15407,
+          "qty": 1,
+          "name": "Cured Rugged Hide"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19088"
+    },
+    "15084": {
+      "itemId": 15084,
+      "name": "Wicked Leather Bracers",
+      "spellId": 19052,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 8,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 2325,
+          "qty": 1,
+          "name": "Black Dye"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19052"
+    },
+    "15087": {
+      "itemId": 15087,
+      "name": "Wicked Leather Pants",
+      "spellId": 19083,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 16,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 15407,
+          "qty": 1,
+          "name": "Cured Rugged Hide"
+        },
+        {
+          "itemId": 2325,
+          "qty": 3,
+          "name": "Black Dye"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19083"
+    },
+    "15092": {
+      "itemId": 15092,
+      "name": "Runic Leather Bracers",
+      "spellId": 19065,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 6,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 7971,
+          "qty": 1,
+          "name": "Black Pearl"
+        },
+        {
+          "itemId": 14047,
+          "qty": 6,
+          "name": "Runecloth"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19065"
+    },
+    "15094": {
+      "itemId": 15094,
+      "name": "Runic Leather Headband",
+      "spellId": 19082,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 14,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 14047,
+          "qty": 10,
+          "name": "Runecloth"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19082"
+    },
+    "15407": {
+      "itemId": 15407,
+      "name": "Cured Rugged Hide",
+      "spellId": 19047,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 8171,
+          "qty": 1,
+          "name": "Rugged Hide"
+        },
+        {
+          "itemId": 15409,
+          "qty": 1,
+          "name": "Refined Deeprock Salt"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19047"
+    },
+    "15869": {
+      "itemId": 15869,
+      "name": "Silver Skeleton Key",
+      "spellId": 19666,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 1,
+          "name": "Silver Bar"
+        },
+        {
+          "itemId": 3470,
+          "qty": 1,
+          "name": "Rough Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19666"
+    },
+    "15872": {
+      "itemId": 15872,
+      "name": "Arcanite Skeleton Key",
+      "spellId": 19669,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 2,
+      "outputMax": 2,
+      "reagents": [
+        {
+          "itemId": 12360,
+          "qty": 1,
+          "name": "Arcanite Bar"
+        },
+        {
+          "itemId": 12644,
+          "qty": 1,
+          "name": "Dense Grinding Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19669"
+    },
+    "15992": {
+      "itemId": 15992,
+      "name": "Dense Blasting Powder",
+      "spellId": 19788,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12365,
+          "qty": 2,
+          "name": "Dense Stone"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19788"
+    },
+    "15994": {
+      "itemId": 15994,
+      "name": "Thorium Widget",
+      "spellId": 19791,
+      "profession": "Engineering",
+      "skill": 260,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 3,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 14047,
+          "qty": 1,
+          "name": "Runecloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19791"
+    },
+    "15996": {
+      "itemId": 15996,
+      "name": "Lifelike Mechanical Toad",
+      "spellId": 19793,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12803,
+          "qty": 1,
+          "name": "Living Essence"
+        },
+        {
+          "itemId": 15994,
+          "qty": 4,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 10558,
+          "qty": 1,
+          "name": "Gold Power Core"
+        },
+        {
+          "itemId": 8170,
+          "qty": 1,
+          "name": "Rugged Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19793"
+    },
+    "16000": {
+      "itemId": 16000,
+      "name": "Thorium Tube",
+      "spellId": 19795,
+      "profession": "Engineering",
+      "skill": 275,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 6,
+          "name": "Thorium Bar"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19795"
+    },
+    "16005": {
+      "itemId": 16005,
+      "name": "Dark Iron Bomb",
+      "spellId": 19799,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 3,
+      "outputMax": 3,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 2,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 11371,
+          "qty": 1,
+          "name": "Dark Iron Bar"
+        },
+        {
+          "itemId": 15992,
+          "qty": 3,
+          "name": "Dense Blasting Powder"
+        },
+        {
+          "itemId": 14047,
+          "qty": 3,
+          "name": "Runecloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19799"
+    },
+    "16023": {
+      "itemId": 16023,
+      "name": "Masterwork Target Dummy",
+      "spellId": 19814,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1,
+          "name": "Mithril Casing"
+        },
+        {
+          "itemId": 16000,
+          "qty": 1,
+          "name": "Thorium Tube"
+        },
+        {
+          "itemId": 15994,
+          "qty": 2,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 6037,
+          "qty": 1,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 8170,
+          "qty": 2,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 14047,
+          "qty": 4,
+          "name": "Runecloth"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=19814"
+    },
+    "18232": {
+      "itemId": 18232,
+      "name": "Field Repair Bot 74A",
+      "spellId": 22704,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 12,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 7191,
+          "qty": 1,
+          "name": "Fused Wiring"
+        },
+        {
+          "itemId": 7067,
+          "qty": 2,
+          "name": "Elemental Earth"
+        },
+        {
+          "itemId": 7068,
+          "qty": 1,
+          "name": "Elemental Fire"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=22704",
+      "caveat": "The Field Repair Bot schematic is found in Blackrock Depths."
+    },
+    "18253": {
+      "itemId": 18253,
+      "name": "Major Rejuvenation Potion",
+      "spellId": 22732,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 10286,
+          "qty": 1,
+          "name": "Heart of the Wild"
+        },
+        {
+          "itemId": 13464,
+          "qty": 4,
+          "name": "Golden Sansam"
+        },
+        {
+          "itemId": 13463,
+          "qty": 4,
+          "name": "Dreamfoil"
+        },
+        {
+          "itemId": 18256,
+          "qty": 1,
+          "name": "Imbued Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=22732"
+    },
+    "18258": [
+      {
+        "itemId": 18258,
+        "name": "Gordok Ogre Suit",
+        "spellId": 22813,
+        "profession": "Tailoring",
+        "skill": 0,
+        "outputMin": 1,
+        "outputMax": 1,
+        "reagents": [
+          {
+            "itemId": 14048,
+            "qty": 2,
+            "name": "Bolt of Runecloth"
+          },
+          {
+            "itemId": 8170,
+            "qty": 4,
+            "name": "Rugged Leather"
+          },
+          {
+            "itemId": 18240,
+            "qty": 1,
+            "name": "Ogre Tannin"
+          },
+          {
+            "itemId": 14341,
+            "qty": 1,
+            "name": "Rune Thread"
+          }
+        ],
+        "sourceUrl": "https://www.wowhead.com/forever/spell=22813"
+      },
+      {
+        "itemId": 18258,
+        "name": "Gordok Ogre Suit",
+        "spellId": 22815,
+        "profession": "Leatherworking",
+        "skill": 0,
+        "outputMin": 1,
+        "outputMax": 1,
+        "reagents": [
+          {
+            "itemId": 8170,
+            "qty": 4,
+            "name": "Rugged Leather"
+          },
+          {
+            "itemId": 14048,
+            "qty": 2,
+            "name": "Bolt of Runecloth"
+          },
+          {
+            "itemId": 18240,
+            "qty": 1,
+            "name": "Ogre Tannin"
+          },
+          {
+            "itemId": 14341,
+            "qty": 1,
+            "name": "Rune Thread"
+          }
+        ],
+        "sourceUrl": "https://www.wowhead.com/forever/spell=22815"
+      }
+    ],
+    "18587": {
+      "itemId": 18587,
+      "name": "Goblin Jumper Cables XL",
+      "spellId": 23078,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 2,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 18631,
+          "qty": 2,
+          "name": "Truesilver Transformer"
+        },
+        {
+          "itemId": 7191,
+          "qty": 2,
+          "name": "Fused Wiring"
+        },
+        {
+          "itemId": 14227,
+          "qty": 2,
+          "name": "Ironweb Spider Silk"
+        },
+        {
+          "itemId": 7910,
+          "qty": 2,
+          "name": "Star Ruby"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=23078",
+      "caveat": "Requires Goblin Engineering specialization."
+    },
+    "18631": {
+      "itemId": 18631,
+      "name": "Truesilver Transformer",
+      "spellId": 23071,
+      "profession": "Engineering",
+      "skill": 260,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 2,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 7067,
+          "qty": 2,
+          "name": "Elemental Earth"
+        },
+        {
+          "itemId": 7069,
+          "qty": 1,
+          "name": "Elemental Air"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=23071"
+    },
+    "18645": {
+      "itemId": 18645,
+      "name": "Gnomish Alarm-O-Bot",
+      "spellId": 23096,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 4,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 15994,
+          "qty": 2,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 7910,
+          "qty": 1,
+          "name": "Star Ruby"
+        },
+        {
+          "itemId": 7191,
+          "qty": 1,
+          "name": "Fused Wiring"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=23096",
+      "caveat": "Requires Gnomish Engineering specialization."
+    },
+    "18662": {
+      "itemId": 18662,
+      "name": "Heavy Leather Ball",
+      "spellId": 23190,
+      "profession": "Leatherworking",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 2,
+          "name": "Heavy Leather"
+        },
+        {
+          "itemId": 2321,
+          "qty": 1,
+          "name": "Fine Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=23190"
+    },
+    "20549": {
+      "itemId": 20549,
+      "name": "Darkrune Gauntlets",
+      "spellId": 24912,
+      "profession": "Blacksmithing",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 12,
+          "name": "Thorium Bar"
+        },
+        {
+          "itemId": 20520,
+          "qty": 6,
+          "name": "Dark Rune"
+        },
+        {
+          "itemId": 6037,
+          "qty": 6,
+          "name": "Truesilver Bar"
+        },
+        {
+          "itemId": 12810,
+          "qty": 2,
+          "name": "Enchanted Leather"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=24912"
+    },
+    "21277": {
+      "itemId": 21277,
+      "name": "Tranquil Mechanical Yeti",
+      "spellId": 26011,
+      "profession": "Engineering",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 15407,
+          "qty": 1,
+          "name": "Cured Rugged Hide"
+        },
+        {
+          "itemId": 15994,
+          "qty": 4,
+          "name": "Thorium Widget"
+        },
+        {
+          "itemId": 7079,
+          "qty": 2,
+          "name": "Globe of Water"
+        },
+        {
+          "itemId": 18631,
+          "qty": 2,
+          "name": "Truesilver Transformer"
+        },
+        {
+          "itemId": 10558,
+          "qty": 1,
+          "name": "Gold Power Core"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=26011",
+      "caveat": "The Tranquil Mechanical Yeti schematic is learned from a quest."
+    },
+    "21340": {
+      "itemId": 21340,
+      "name": "Soul Pouch",
+      "spellId": 26085,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 6,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 8170,
+          "qty": 4,
+          "name": "Rugged Leather"
+        },
+        {
+          "itemId": 7972,
+          "qty": 2,
+          "name": "Ichor of Undeath"
+        },
+        {
+          "itemId": 14341,
+          "qty": 1,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=26085"
+    },
+    "22246": {
+      "itemId": 22246,
+      "name": "Enchanted Mageweave Pouch",
+      "spellId": 27658,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 4,
+          "name": "Bolt of Mageweave"
+        },
+        {
+          "itemId": 11137,
+          "qty": 4,
+          "name": "Vision Dust"
+        },
+        {
+          "itemId": 8343,
+          "qty": 2,
+          "name": "Heavy Silken Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=27658"
+    },
+    "22251": {
+      "itemId": 22251,
+      "name": "Cenarion Herb Bag",
+      "spellId": 27724,
+      "profession": "Tailoring",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 14048,
+          "qty": 5,
+          "name": "Bolt of Runecloth"
+        },
+        {
+          "itemId": 8831,
+          "qty": 10,
+          "name": "Purple Lotus"
+        },
+        {
+          "itemId": 11040,
+          "qty": 8,
+          "name": "Morrowgrain"
+        },
+        {
+          "itemId": 14341,
+          "qty": 2,
+          "name": "Rune Thread"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=27724"
+    },
+    "246948": {
+      "itemId": 246948,
+      "name": "Distilled Firewater",
+      "spellId": 1244421,
+      "profession": "Alchemy",
+      "skill": 260,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 3819,
+          "qty": 4,
+          "name": "Wintersbite"
+        },
+        {
+          "itemId": 8846,
+          "qty": 2,
+          "name": "Gromsblood"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=1244421"
+    },
+    "249409": {
+      "itemId": 249409,
+      "name": "Cerulean Dye",
+      "spellId": 1249630,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 249399,
+          "qty": 2,
+          "name": "Frilled Lichen"
+        },
+        {
+          "itemId": 3371,
+          "qty": 1,
+          "name": "Empty Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=1249630"
+    },
+    "249430": {
+      "itemId": 249430,
+      "name": "Magenta Dye",
+      "spellId": 1249631,
+      "profession": "Alchemy",
+      "skill": 0,
+      "outputMin": 1,
+      "outputMax": 1,
+      "reagents": [
+        {
+          "itemId": 249424,
+          "qty": 2,
+          "name": "Rosecap"
+        },
+        {
+          "itemId": 3372,
+          "qty": 1,
+          "name": "Leaded Vial"
+        }
+      ],
+      "sourceUrl": "https://www.wowhead.com/forever/spell=1249631"
+    }
+  }
+}
