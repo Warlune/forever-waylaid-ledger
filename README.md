@@ -2,22 +2,21 @@
 
 A community price and turn-in planner for Waylaid Crates and Craftsman's Writs on the WoW Forever beta. It compares finished-goods buyouts with crafting from raw materials, and uses faction-specific auction data when available.
 
-Horde and Alliance each have separate PvP owner-scan markets on Classic Beta PvP 2. Normal and RP markets currently use their matching AHledger feeds until their realm identities can be verified. Goblin neutral auction houses do not contribute owner-scan prices.
+Horde and Alliance use separate AHledger markets for PvP, Normal, and RP. The website reads AHledger only; personal scans are supported by the separate Forever Waylaid addon.
 
 [Open the ledger](https://warlune.github.io/forever-waylaid-ledger/)
 
 ## Project layout
 
 - `dist/` is the browser app and its beta catalogue. `node scripts/export-pages.mjs` copies the static files into `docs/` for GitHub Pages.
-- `worker/index.js` is the scan API. The Pages app reads the existing hosted API; GitHub Pages cannot run this Worker or store scans.
-- `addon/ForeverWaylaidScan/` captures completed Horde and Alliance capital scans in game. `tools/owner-scan-sync.mjs` reads each faction's SavedVariables snapshot and uploads validated prices to its separate PvP market in the API.
+- `worker/index.js` and the old scan capture tools are retained as legacy code; the public website no longer reads owner scans.
 - `scripts/` contains catalogue generation, build tools, and tests.
 
 ## GitHub Pages
 
 The public site is published from `main` and `/docs` at `https://warlune.github.io/forever-waylaid-ledger/`.
 
-When browser files change, run `node scripts/export-pages.mjs` and commit both `dist/` and `docs/`. The existing hosted API remains necessary for shared owner scans. Do not put the upload token or local sync configuration in this repository.
+When browser files change, run `node scripts/export-pages.mjs` and commit both `dist/` and `docs/`. The public website has no dependency on the legacy owner-scan API. Do not put the upload token or local sync configuration in this repository.
 
 ## Privacy
 
@@ -29,4 +28,4 @@ Run `node scripts/build-worker.cjs`, then `node --test scripts/test-crafting.mjs
 
 ## License and data
 
-Project code is MIT licensed. World of Warcraft names and related game data belong to their respective owners. Auction prices come from [AHledger](https://ahledger.com/) and verified owner scans; recipe data is based on the Forever beta client. This project is not affiliated with Blizzard Entertainment.
+Project code is MIT licensed. World of Warcraft names and related game data belong to their respective owners. Auction prices come from [AHledger](https://ahledger.com/); recipe data is based on the Forever beta client. This project is not affiliated with Blizzard Entertainment.

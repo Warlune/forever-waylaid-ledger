@@ -43,12 +43,11 @@
       <div class="filters">
         <label class="filter"><span>Tier</span><select id="tier"><option value="all">All tiers</option><option>Apprentice</option><option>Journeyman</option><option>Expert</option><option>Artisan</option></select></label>
         <label class="filter"><span>Sort by</span><select id="sort"><option value="efficiency">Cost per observed Favor</option><option value="cost">Lowest total cost</option><option value="name">Name</option></select></label>
-        <label class="filter"><span>Price source</span><select id="price-source"><option value="auto">Newest scan</option><option value="owner">Owner Auctionator</option><option value="public">AHledger</option></select></label>
         <label class="filter" id="fill-mode-filter"><span>Goods pricing</span><select id="fill-mode"><option value="buy">Buy finished goods</option><option value="craft">Craft from raw mats</option></select></label>
         <label class="owned"><input id="owned" type="checkbox"><span id="owned-label">I already have the crate</span></label>
         <button class="refresh" id="refresh" type="button">Refresh prices</button>
       </div>
-      <details class="scan-help"><summary>How shared scans update</summary><p id="scan-help-copy">AHledger prices use the selected faction’s auction market. The site owner’s completed Auctionator scans publish after WoW saves them on <code>/reload</code> or logout for supported PvP markets. Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.</p></details>
+      <details class="scan-help"><summary>How shared scans update</summary><p id="scan-help-copy">Prices come from the selected faction’s AHledger market. No upload is needed.</p></details>
       <section class="workspace" aria-label="Turn-in comparisons">
         <div class="summary">
           <span class="summary-count"><strong id="result-count">30 crates</strong><span id="sort-note">Lowest cost per Favor first</span></span>
@@ -59,7 +58,7 @@
         <div id="results" class="results" role="tabpanel" aria-labelledby="tab-crates"><div class="empty">Loading turn-ins…</div></div>
       </section>
     </main>
-    <footer><span id="price-credit">Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a> or the site owner’s verified faction auction scans. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.</span><span>Crate catalogue from the <a href="https://daybreakforever.com/static/forever/datamine.json" target="_blank" rel="noopener noreferrer">Forever beta client</a>, build 1.60.1.70009; writ objectives from <a href="https://www.wowhead.com/forever/quests/eastern-kingdoms/crafting" target="_blank" rel="noopener noreferrer">Wowhead Forever</a>. Unaffiliated with Blizzard.</span></footer>
+    <footer><span id="price-credit">Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a>. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.</span><span>Crate catalogue from the <a href="https://daybreakforever.com/static/forever/datamine.json" target="_blank" rel="noopener noreferrer">Forever beta client</a>, build 1.60.1.70009; writ objectives from <a href="https://www.wowhead.com/forever/quests/eastern-kingdoms/crafting" target="_blank" rel="noopener noreferrer">Wowhead Forever</a>. Unaffiliated with Blizzard.</span></footer>
   </div>
   <div class="faction-transition" id="faction-transition" aria-hidden="true"><div class="faction-transition-rune"><img id="transition-crest" src="./horde-crest.svg" alt=""></div></div>
 </body>

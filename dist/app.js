@@ -1,20 +1,15 @@
 const API = 'https://api.ahledger.com/v1/pricetable/';
-const OWNER_SCAN_API = location.hostname === 'warlune.github.io' &&
-  location.pathname.startsWith('/forever-waylaid-ledger/')
-  ? 'https://forever-waylaid-ledger.warlune.chatgpt.site/api/owner-scan'
-  : '/api/owner-scan';
 const FACTIONS = {
   horde: { name: 'Horde', factionName: 'Durotar Supply and Logistics', themeColor: '#17130e' },
   alliance: { name: 'Alliance', factionName: 'Azeroth Commerce Authority', themeColor: '#0b1729' }
 };
-const OWNER_MARKETS = new Set(Object.keys(FACTIONS).map(faction => `forever.pvp.${faction}.us`));
 const MARKET_TYPES = ['pvp', 'normal', 'rp'];
 const state = {
   catalog: null, recipes: null, recipeError: '', vendors: null, catalogIds: new Set(), prices: new Map(), market: 'forever.pvp.horde.us',
   faction: 'horde', vendorCatalogs: { horde: null, alliance: null },
   tab: 'crates', sort: 'efficiency', tier: 'all', fillMode: 'buy', search: '', owned: false,
   scanTime: null, priceState: 'loading', priceError: '', marketGeneration: 0,
-  source: 'public', preference: 'auto', feeds: { public: null, owner: null }, feedErrors: {}, fingerprints: {}, blended: null, merged: false
+  feeds: { public: null }, feedErrors: {}, fingerprints: {}
 };
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -105,24 +100,13 @@ function renderStatus() {
   }
   if (state.prices.size === 0) {
     status.classList.add('notice-error');
-    status.textContent = OWNER_MARKETS.has(state.market) && state.preference === 'owner' && !state.feeds.owner ?
-      'No verified owner scan is published for this ' + FACTIONS[state.faction].name + ' market yet. AHledger remains available in Price source.' :
-      'No player auction scan is available for this ' + FACTIONS[state.faction].name + ' market yet. Requirements remain visible below.';
+    status.textContent = 'No AHledger scan is available for this market yet. Requirements remain visible below.';
     return;
   }
   const market = (state.market.includes('.pvp.') ? 'PvP' : state.market.includes('.normal.') ? 'Normal' : 'RP') + ' ' + FACTIONS[state.faction].name + ' · US';
   const when = state.scanTime ? new Date(state.scanTime * 1000).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : 'unknown time';
   const hoursOld = state.scanTime ? (Date.now() - state.scanTime * 1000) / 3600000 : null;
-  const source = state.source === 'owner' ?
-    'Verified ' + FACTIONS[state.faction].name + ' Auctionator scan' + (state.merged ? ' + <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger fallback</a>' : '') :
-    '<a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger ' + FACTIONS[state.faction].name + ' scan</a>';
-  const other = state.source === 'owner' ? state.feeds.public : state.feeds.owner;
-  const otherName = state.source === 'owner' ? 'AHledger' : 'owner scan';
-  status.innerHTML = '<strong>' + market + '</strong> · ' + source + ' · ' + num(state.prices.size) + ' priced items' +
-    (state.merged ? ' (' + num(state.feeds.owner.prices.size) + ' from owner scan)' : '') + ' · ' + esc(when) +
-    ' (' + ageText(state.scanTime) + '). ' + (other ? otherName + ': ' + ageText(other.scanTime) + '. ' : '') +
-    (state.preference === 'owner' && !state.feeds.owner && state.source === 'public' ? 'Owner scan unavailable; using AHledger. ' : '') +
-    'Prices are lowest-buyout estimates.' + (hoursOld > 12 ? ' Scan is over 12 hours old; check in game before buying.' : '');
+  status.innerHTML = '<strong>' + market + '</strong> · <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a> · ' + num(state.prices.size) + ' priced items · ' + esc(when) + ' (' + ageText(state.scanTime) + '). Prices are lowest-buyout estimates.' + (hoursOld > 12 ? ' Scan is over 12 hours old; check in game before buying.' : '') + (state.feedErrors.public ? ' Refresh failed; showing the last successful scan.' : '');
   if (hoursOld > 12) status.classList.add('notice-stale');
 }
 
@@ -443,97 +427,37 @@ function registerComparisonTool() {
   try { Promise.resolve(context.registerTool(tool, { signal: controller.signal })).catch(() => {}); } catch (_) {}
 }
 
-function parseOwnerSnapshot(raw, market) {
-  const data = JSON.parse(raw);
-  const faction = market.split('.')[2];
-  if (!OWNER_MARKETS.has(market) || !data || typeof data !== 'object' || Array.isArray(data) ||
-      data.schemaVersion !== 1 || data.market !== market || data.auctionHouse !== faction ||
-      data.faction !== FACTIONS[faction].name ||
-      !Number.isSafeInteger(data.completedAt) || data.completedAt <= 0 || !Array.isArray(data.prices)) {
-    throw new Error('The owner scan has an unexpected market or format.');
-  }
-  const prices = new Map();
-  for (const row of data.prices) {
-    if (!row || !Number.isSafeInteger(row.itemId) || !Number.isSafeInteger(row.price) || row.price <= 0 ||
-        (row.quantity != null && (!Number.isSafeInteger(row.quantity) || row.quantity < 0))) continue;
-    if (state.catalogIds.has(row.itemId)) prices.set(row.itemId, {
-      median: null, min: row.price, quantity: row.quantity ?? null
-    });
-  }
-  return { prices, scanTime: data.completedAt };
-}
-
-function applyFeedSelection() {
-  const previousSource = state.source;
-  const previousPrices = state.prices;
-  const owner = state.feeds.owner;
-  const publicFeed = state.feeds.public;
-  let source = state.preference;
-  if (source === 'auto') source = owner && (!publicFeed || owner.scanTime > publicFeed.scanTime) ? 'owner' : 'public';
-  if (source === 'owner' && !owner && publicFeed) source = 'public';
-  const feed = state.feeds[source];
-  state.source = source;
-  state.merged = source === 'owner' && !!owner && !!publicFeed;
-  if (state.merged) {
-    if (!state.blended || state.blended.owner !== owner || state.blended.public !== publicFeed) {
-      state.blended = { owner, public: publicFeed, prices: new Map([...publicFeed.prices, ...owner.prices]) };
-    }
-    state.prices = state.blended.prices;
-  } else state.prices = feed?.prices || new Map();
-  state.scanTime = feed?.scanTime || null;
-  state.priceState = feed ? 'ready' : publicFeed || owner ? 'ready' : 'error';
-  state.priceError = !feed && !publicFeed && !owner ?
-    (state.feedErrors.public || state.feedErrors.owner || 'No feed is available yet.') : '';
-  $('#price-source').value = state.preference;
-  renderStatus();
-  if (previousSource !== source || previousPrices !== state.prices) renderResults();
-}
-
-async function loadPrices(sources = ['public', 'owner'], quiet = false) {
+async function loadPrices(quiet = false) {
   const market = state.market;
   const generation = state.marketGeneration;
-  const requestedSources = sources.filter(source => source === 'public' || (source === 'owner' && OWNER_MARKETS.has(market)));
-  if (!requestedSources.length) return;
-  if (!quiet && !state.feeds.public && !state.feeds.owner) {
-    state.priceState = 'loading';
-    renderStatus();
-  }
-  const results = await Promise.allSettled(requestedSources.map(async source => {
-    const url = source === 'public' ? API + market : OWNER_SCAN_API + '?market=' + encodeURIComponent(market);
-    const response = await fetch(url, { cache: 'no-store' });
-    if (source === 'owner' && response.status === 404) return { source, missing: true };
-    if (!response.ok) throw new Error((source === 'public' ? 'AHledger' : 'Owner scan') + ' returned ' + response.status + '.');
+  if (!quiet && !state.feeds.public) { state.priceState = 'loading'; renderStatus(); }
+  try {
+    const response = await fetch(API + market);
+    if (!response.ok) throw new Error('AHledger returned ' + response.status + '.');
     const raw = await response.text();
-    return { source, raw, feed: source === 'public' ? parsePriceTable(raw, market) : parseOwnerSnapshot(raw, market) };
-  }));
-  if (generation !== state.marketGeneration || market !== state.market) return;
-  results.forEach((result, index) => {
-    const source = requestedSources[index];
-    if (result.status === 'rejected') {
-      state.feedErrors[source] = result.reason?.message || 'Network error.';
-    } else if (result.value.missing) {
-      state.feeds[source] = null;
-      state.fingerprints[source] = null;
-      delete state.feedErrors[source];
-    } else {
-      const { raw, feed } = result.value;
-      if (state.fingerprints[source] !== raw && (!state.feeds[source] || feed.scanTime >= state.feeds[source].scanTime)) {
-        state.feeds[source] = feed;
-        state.fingerprints[source] = raw;
-      }
-      delete state.feedErrors[source];
+    const feed = parsePriceTable(raw, market);
+    if (generation !== state.marketGeneration || market !== state.market) return;
+    if (!state.feeds.public || feed.scanTime >= state.feeds.public.scanTime) {
+      state.feeds.public = feed;
+      state.prices = feed.prices;
+      state.scanTime = feed.scanTime;
     }
-  });
-  applyFeedSelection();
+    delete state.feedErrors.public;
+    state.priceState = 'ready'; state.priceError = '';
+  } catch (error) {
+    if (generation !== state.marketGeneration || market !== state.market) return;
+    state.feedErrors.public = error.message;
+    state.priceState = state.feeds.public ? 'ready' : 'error';
+    state.priceError = error.message;
+  }
+  renderStatus(); renderResults();
 }
 
 function resetMarketPrices() {
   ++state.marketGeneration;
-  state.feeds = { public: null, owner: null };
+  state.feeds = { public: null };
   state.fingerprints = {};
   state.feedErrors = {};
-  state.blended = null;
-  state.merged = false;
   state.prices = new Map();
   state.scanTime = null;
   state.priceState = 'loading';
@@ -565,21 +489,8 @@ function setFaction(faction, { market = null, animate = true } = {}) {
   document.querySelectorAll('[data-faction-choice]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.factionChoice === faction));
   });
-  const ownerOption = $('#price-source option[value="owner"]');
-  const ownerAvailable = OWNER_MARKETS.has(nextMarket);
-  ownerOption.disabled = !ownerAvailable;
-  ownerOption.hidden = !ownerAvailable;
-  ownerOption.textContent = 'Owner scan + AHledger';
-  if (!ownerAvailable && state.preference === 'owner') state.preference = 'auto';
-  $('#price-source').value = state.preference;
-  $('#scan-help-copy').innerHTML = 'AHledger prices refresh from its ' + FACTIONS[faction].name + ' market feed. ' +
-    (ownerAvailable ?
-      'The site owner’s completed Auctionator scans publish after WoW saves them on <code>/reload</code> or logout. Missing owner-scan items use the matching AHledger feed. Only scans captured at confirmed ' + FACTIONS[faction].name + ' city auction houses qualify. ' :
-      'Owner scans are currently available for the PvP ' + FACTIONS[faction].name + ' market. This market uses AHledger prices. ') +
-    'Goblin neutral auction houses are excluded. Visitors can view prices without uploading files.';
-  $('#price-credit').innerHTML = 'Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a>' +
-    (ownerAvailable ? ' or the site owner’s verified ' + FACTIONS[faction].name + ' auction scans. Missing owner-scan items use AHledger.' : '.') +
-    ' Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.';
+  $('#scan-help-copy').textContent = 'AHledger supplies the ' + FACTIONS[faction].name + ' market prices. Prices refresh every 30 minutes while this page is open, or when you select Refresh prices. No upload is needed.';
+  $('#price-credit').innerHTML = 'Prices from <a href="https://ahledger.com" target="_blank" rel="noopener noreferrer">AHledger</a>. Cost = lowest observed unit buyout × quantity. Actual purchase can cost more when the cheapest listings run out.';
   window.ShoppingTab?.setFaction?.(faction);
   if (factionChanged && animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const overlay = $('#faction-transition');
@@ -603,10 +514,7 @@ async function initialize() {
   document.querySelectorAll('[data-faction-choice]').forEach(button => button.addEventListener('click', () => {
     setFaction(button.dataset.factionChoice);
   }));
-  $('#price-source').addEventListener('change', event => {
-    state.preference = event.target.value;
-    applyFeedSelection();
-  });
+
   $('#refresh').addEventListener('click', () => loadPrices());
   $('#search').addEventListener('input', event => { state.search = event.target.value; renderResults(); });
   $('#tier').addEventListener('change', event => { state.tier = event.target.value; renderResults(); });
@@ -626,14 +534,13 @@ async function initialize() {
   });
   let lastForegroundRefresh = 0;
   const refreshForeground = () => {
-    if (document.hidden || !state.catalog || Date.now() - lastForegroundRefresh < 30000) return;
+    if (document.hidden || !state.catalog || Date.now() - lastForegroundRefresh < 1800000) return;
     lastForegroundRefresh = Date.now();
-    loadPrices(['owner', 'public'], true);
+    loadPrices(true);
   };
   window.addEventListener('focus', refreshForeground);
   document.addEventListener('visibilitychange', refreshForeground);
-  setInterval(() => { if (!document.hidden && state.catalog) loadPrices(['owner'], true); }, 60000);
-  setInterval(() => { if (!document.hidden && state.catalog) loadPrices(['public'], true); }, 300000);
+  setInterval(() => { if (!document.hidden && state.catalog) loadPrices(true); }, 1800000);
   let savedFaction = 'horde';
   try { if (FACTIONS[localStorage.getItem('forever-waylaid-faction')]) savedFaction = localStorage.getItem('forever-waylaid-faction'); } catch (_) {}
   await setFaction(savedFaction, { animate: false });
